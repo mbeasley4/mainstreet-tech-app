@@ -204,11 +204,12 @@ export default async function InsightsPage({
               <p className="text-center text-slate-500 py-20">No posts published yet.</p>
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {posts.map((post) => (
+                {posts.map((post, index) => (
                   <Link
                     key={post._id}
                     href={`/insights/${post.slug.current}`}
-                    className="group bg-white rounded-2xl overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow duration-300 border border-slate-100"
+                    className="animate-fade-up group bg-white rounded-2xl overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow duration-300 border border-slate-100"
+                    style={{ animationDelay: `${index * 60}ms` }}
                   >
                     {/* Thumbnail */}
                     <div className="aspect-video relative overflow-hidden">
