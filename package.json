@@ -6,12 +6,24 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "patch-images": "node scripts/patch-post-images.js"
   },
   "dependencies": {
+    "@sanity/client": "^7.17.0",
+    "@sanity/image-url": "^1.2.0",
+    "@sanity/vision": "^4.22.0",
+    "axios": "^1.13.6",
+    "cheerio": "^1.2.0",
+    "fs-extra": "^11.3.4",
     "next": "16.1.6",
+    "next-sanity": "^11.6.12",
+    "playwright": "^1.58.2",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "sanity": "^4.22.0",
+    "slugify": "^1.6.8",
+    "styled-components": "^6.3.11"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

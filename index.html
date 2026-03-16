@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main Street Tech | Enterprise Technology Solutions</title>
+  <meta name="description" content="Main Street Tech delivers enterprise-grade database management, application services, data analytics, IT advisory, and hosting solutions built for organizations that demand reliability and performance." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#f0f7ff',
+              100: '#e0effe',
+              200: '#baddfd',
+              300: '#7dc3fb',
+              400: '#38a3f7',
+              500: '#0e84e8',
+              600: '#0267c7',
+              700: '#0351a1',
+              800: '#074585',
+              900: '#0b3a6e',
+              950: '#07244a',
+            },
+            slate: {
+              950: '#0a0f1e',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .hero-gradient {
+      background: linear-gradient(135deg, #07244a 0%, #0351a1 50%, #0e84e8 100%);
+    }
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(14, 132, 232, 0.15);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #38a3f7;
+      transition: width 0.2s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .section-divider {
+      background: linear-gradient(90deg, transparent, #0e84e8, transparent);
+      height: 1px;
+    }
+    html { font-family: 'Inter', system-ui, sans-serif; }
+
+    /* ── Mega menu ─────────────────────────────────────── */
+    .mega-panel {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-top: 10px;
+      z-index: 50;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(6px);
+      transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
+    }
+    .mega-panel.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .mega-item > button {
+      background: none;
+      border: none;
+      font-size: inherit;
+      font-weight: inherit;
+      color: inherit;
+    }
+    .mega-chevron { transition: transform 0.18s ease; }
+    .mega-item.open .mega-chevron { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- ─── Navigation ─────────────────────────────────────── -->
+  <header id="top" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#top" class="flex items-center group">
+        <svg class="h-12 w-auto" preserveAspectRatio="xMidYMid meet" data-bbox="53.679 165.453 644.619 299.078" viewBox="53.679 165.453 644.619 299.078" xmlns="http://www.w3.org/2000/svg" aria-label="Main Street Tech">
+          <!-- Lamp icon — brand blue -->
+          <g fill="#0267c7">
+            <path d="M223.007 222.89c-5.168 8.731-11.615 3.363-18.673 1.51l14.613 37.19c9.65-3.044 10.578-4.363 10.728-13.007.264-15.148.656-30.293 1.013-45.44.023-.968.202-1.932.286-2.696 1.561-1.101 2.823-.496 4.061-.096 10.133 3.268 20.245 6.601 30.4 9.799 2.766.87 4.142 2.312 3.975 5.373-.146 2.669-.245 5.256-1.184 7.83-4.619 12.66-9.25 25.32-13.596 38.075-1.223 3.587-3.066 4.93-6.835 4.985-8.426.12-8.449.309-8.456 8.86-.018 22.321-.083 44.643.05 66.964.023 3.87-1.134 5.281-5.13 5.205-4.031-.077-4.605-2.088-4.59-5.373.066-15.325.015-30.65.005-45.975-.006-7.496-.252-15.003.07-22.485.187-4.318-1.474-6.582-5.567-6.096-5.734.68-7.777-2.313-9.475-7.117-4.214-11.921-8.819-23.708-13.469-35.468-1.332-3.368-.77-5.424 2.287-7.473 7.698-5.162 15.192-10.628 24.089-16.905-1.392 8.385 2.77 16.136-4.602 22.34m28.732 2.123c-5.125-2.45-9.17-6.755-14.82-9.054-1.071 12.432-.376 24.388-.634 36.323-.049 2.233.971 3.376 2.994 3.898 3.432.886 6.549 3.263 10.352 2.287.449-.116.777-1.034 1-1.64 4.593-12.393 9.162-24.795 14-37.909-4.54 2.307-8.34 4.238-12.892 6.095"></path>
+            <path d="M223.116 189.063c4.92-5.281 5.08-12.169 7.62-18.07.762-1.772.63-4.01 3.257-5.54 1.772 4.909 3.775 9.59 5.12 14.454 1.139 4.12 3.374 7.018 6.81 9.425 5.996 4.202 11.84 8.627 17.653 13.082 1.355 1.04 3.344 1.654 3.652 4.165-2.537.153-4.5-1.225-6.554-2.05-7.565-3.04-15.144-6.06-22.585-9.386-3.259-1.457-5.775-1.26-8.735.805-6.821 4.76-13.889 9.166-20.859 13.713-1.34.874-2.6 1.942-5.872 2.266 7.33-8.18 13.79-15.39 20.493-22.864"></path>
+          </g>
+          <!-- Text + rule — dark navy -->
+          <g fill="#07244a">
+            <path d="M69.005 378.804c207.753.015 415.006.024 622.26.118 2.69 0 6.887-1.82 7.03 3.625.057 2.147-.675 3.569-3.06 3.609-1.5.025-2.998.05-4.498.05q-313.878.015-627.758.022c-1.999 0-3.998-.045-5.997-.067-2.637-.03-3.335-1.58-3.302-3.941.032-2.304 1.08-3.37 3.33-3.375 3.832-.009 7.664-.026 11.995-.04"></path>
+            <path d="M71.268 344.146c-2.226 5.468-6.17 2.495-10.444 3.016l15.518-80.782 1.536-.117 27.175 62.37 27.198-62.192 1.66.186 15.275 79.69c-7.893 2.373-9.39 1.62-10.792-5.421-2.627-13.2-5.155-26.42-7.733-39.63-.185-.95-.146-2.013-1.666-2.976l-23.104 51.258-1.456.238-24.033-53.342c-3.19 16.615-6.133 31.941-9.134 47.702"></path>
+            <path d="M324.306 304v45.282l-1.487.79-57.663-60.057c-1.3 1.949-.847 3.78-.854 5.464-.056 15.49-.114 30.98-.026 46.468.02 3.599-.776 5.523-4.981 5.475-3.944-.046-4.686-1.786-4.667-5.197.097-17.155.034-34.31.03-51.465q-.003-11.448-.001-22.895l1.38-.853 57.67 60.284c1.445-2.191.916-4.063.922-5.808.055-15.49.095-30.98-.01-46.468-.023-3.52.541-5.51 4.844-5.49 4.248.02 4.944 1.92 4.89 5.49-.143 9.491-.048 18.986-.047 28.98"></path>
+            <path d="M502.67 336.29a28496 28496 0 0 0-15.688-22.506c-2.079 5.706-1.501 10.985-1.617 16.219-.1 4.494-.15 8.995-.007 13.486.102 3.215-1.54 3.936-4.325 3.872-2.67-.062-5.156-.059-5.116-3.726.015-1.332-.043-2.664-.044-3.996-.022-20.982-.048-41.964-.055-62.946-.002-7.029.023-7.064 7.247-7.031 6.305.028 12.628-.43 18.809 1.553 9.386 3.011 14.156 9.04 14.439 18.647.31 10.59-4.523 18.35-13.468 21.623l-4.918 1.804 23.103 32.93c-8.047 2.426-10.459 1.69-14.231-3.845-1.313-1.927-2.62-3.856-4.129-6.084m-17.31-43.795c.005 2.986.004 5.971.016 8.957.006 1.382.244 2.583 1.752 3.23 7.865 3.37 19.273-3.7 19.547-12.146.294-9.056-4.188-13.354-14.738-14.136-5.929-.439-6.51.099-6.57 6.143-.022 2.322-.005 4.644-.006 7.952"></path>
+            <path d="M166.927 333.83c-1.133 2.644-2.101 4.943-3.08 7.238-2.994 7.018-3.72 7.363-12.785 5.396l35.035-79.689 1.51-.273 34.168 79.684c-7.903 2.568-9.729 1.788-12.437-4.759-1.59-3.842-3.301-7.638-4.74-11.535-1.197-3.246-3.152-4.68-6.742-4.539-6.148.243-12.364.563-18.456-.066-6.76-.697-10.849 1.49-12.473 8.544m14.54-33.961-6.856 16.357h24.039l-11.893-28.496c-2.08 4.796-3.524 8.123-5.29 12.139"></path>
+            <path d="M556.996 269.65c3.995.004 7.497.13 10.986-.024 3.232-.144 4.386 1.18 4.376 4.397-.01 3.252-1.268 4.412-4.452 4.355-7.156-.128-14.325.181-21.472-.1-4.247-.167-5.648 1.478-5.366 5.51.232 3.312.273 6.675-.012 9.98-.405 4.693 1.243 6.642 6.164 6.377 6.308-.34 12.649-.023 18.974-.086 3.293-.033 5.25.735 5.24 4.739-.009 4.086-2.04 4.598-5.318 4.537-6.656-.124-13.32.1-19.975-.082-3.52-.097-5.226.906-5.11 4.753.203 6.653.204 13.321-.008 19.974-.123 3.863 1.59 4.818 5.108 4.727 7.154-.186 14.317.01 21.474-.07 2.911-.033 4.72.57 4.721 4.09.003 3.452-1.274 4.707-4.713 4.663-10.653-.138-21.309-.1-31.963-.022-2.808.02-4.109-.663-4.207-3.906-.677-22.468-.151-44.94-.458-67.408-.067-4.91 1.38-6.863 6.54-6.507 6.296.434 12.645.103 19.47.103"></path>
+            <path d="M596.2 310.196c-1.535 8.585-.508 16.908-.817 25.202-.12 3.194 2.084 3.262 4.393 3.257 7.494-.016 14.989.079 22.481-.026 3.15-.045 5.008.65 5.012 4.377.004 3.71-1.799 4.42-4.977 4.385-10.49-.11-20.984-.154-31.474 0-3.7.054-5.002-1.403-4.992-4.996a8645 8645 0 0 0-.058-67.946c-.019-3.731 1.453-4.914 5.056-4.86 10.489.16 20.983.129 31.473.02 3.221-.034 4.958.785 4.95 4.44-.007 3.753-1.968 4.374-5.078 4.33-7.16-.104-14.325.114-21.48-.086-3.764-.106-5.594.994-5.344 5.064.244 3.981.194 7.998-.012 11.984-.18 3.471 1.23 4.787 4.645 4.734 6.992-.108 13.988.023 20.983.016 3.214-.004 5.36.704 5.34 4.73-.02 4.096-2.208 4.45-5.426 4.526-8.128.193-16.283-.754-24.676.849"></path>
+            <path d="M402.156 346.478c-14.87 5.22-28.045.133-33.312-12.66-.966-2.347-2.64-5.078 1.36-6.557 3.33-1.232 5.868-2.137 7.577 2.75 2.692 7.7 10.265 11.277 17.649 9.35 7.094-1.85 11.69-8.09 11.229-15.134-.288-4.39-2.696-7.356-6.147-9.737-4.573-3.154-9.92-4.671-14.82-7.12-6.212-3.104-12.019-6.728-13.91-14.07-3.771-14.642 8.342-26.039 22.812-25.162 6.918.419 12.823 3.29 16.994 9.155 1.5 2.11 1.83 3.873-.784 5.322-2.179 1.208-4.184 3.896-6.652.275-2.993-4.39-7.26-6.118-12.526-5.588-4.943.498-8.585 2.908-10.103 7.626-1.545 4.807.038 8.776 4.295 11.7 4.167 2.86 8.945 4.385 13.454 6.502 6.872 3.228 13.43 6.887 15.995 14.772 3.518 10.814-1.466 21.848-13.11 28.576"></path>
+            <path d="M442 269.65c7.66.003 14.82.1 21.977-.032 3.206-.058 4.41 1.135 4.396 4.38-.014 3.228-1.199 4.534-4.415 4.375-3.155-.156-6.336.137-9.485-.074-3.907-.262-5.216 1.303-5.188 5.217.144 19.645-.007 39.293.11 58.938.022 3.6-1.041 5.01-4.817 4.983-3.801-.027-4.897-1.59-4.858-5.106.114-10.321.028-20.645.023-30.967-.004-9.324-.156-18.652.065-27.97.094-3.977-1.338-5.402-5.227-5.096-3.143.248-6.326-.06-9.485.061-3.135.12-4.09-1.517-4.007-4.314.078-2.606.629-4.513 3.93-4.423 5.49.149 10.987.033 16.981.028"></path>
+            <path d="M662.18 289.041c-.008 17.962-.03 35.43-.008 52.897.004 3.095-.233 5.475-4.445 5.494-3.896.018-5.195-1.234-5.159-5.167.165-17.965.099-35.933.058-53.9-.025-11.224 1.074-9.92-9.755-10.018-1.497-.014-3.001-.105-4.49.006-3.414.254-4.715-1.216-4.738-4.662-.025-3.545 1.79-4.08 4.696-4.064 12.643.07 25.287.08 37.93-.01 3.008-.02 4.74.792 4.723 4.15-.019 3.358-1.393 4.934-4.84 4.58-1.317-.136-2.66-.038-3.99-.019-11.279.166-9.84-1.496-9.983 10.713"></path>
+          </g>
+        </svg>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600">
+
+        <li><a href="#why-us" class="nav-link hover:text-brand-600 transition-colors">About</a></li>
+
+        <!-- ── Services mega menu ──────────────────────────── -->
+        <li class="relative mega-item">
+          <button class="nav-link hover:text-brand-600 transition-colors flex items-center gap-1 py-1">
+            Services
+            <svg class="mega-chevron w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="mega-panel" style="width:860px">
+            <div class="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
+              <div class="p-6">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">What We Do</p>
+                <div class="grid grid-cols-3 gap-2">
+
+                  <!-- Database Services -->
+                  <a href="#services" class="flex flex-col gap-2 p-3.5 rounded-xl hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-lg bg-brand-50 group-hover:bg-brand-100 transition-colors flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 5v4c0 1.657 4.03 3 9 3s9-1.343 9-3V5M3 9v4c0 1.657 4.03 3 9 3s9-1.343 9-3V9M3 13v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4"/></svg>
+                      </div>
+                      <span class="font-semibold text-slate-900 text-sm">Database Services</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">Remote DBA · Assessments · Monitoring · Tuning · Upgrades · Development</p>
+                  </a>
+
+                  <!-- Enterprise Applications -->
+                  <a href="#services" class="flex flex-col gap-2 p-3.5 rounded-xl hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-lg bg-brand-50 group-hover:bg-brand-100 transition-colors flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4"/></svg>
+                      </div>
+                      <span class="font-semibold text-slate-900 text-sm">Enterprise Applications</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">TAMS · FAMS · Cloud Strategy · Integrations · Version Upgrades</p>
+                  </a>
+
+                  <!-- Data & Analytics -->
+                  <a href="#services" class="flex flex-col gap-2 p-3.5 rounded-xl hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-lg bg-brand-50 group-hover:bg-brand-100 transition-colors flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                      </div>
+                      <span class="font-semibold text-slate-900 text-sm">Data &amp; Analytics</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">Strategy · Governance · Visualization · Architecture · Integration</p>
+                  </a>
+
+                  <!-- Artificial Intelligence -->
+                  <a href="#services" class="flex flex-col gap-2 p-3.5 rounded-xl hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-lg bg-brand-50 group-hover:bg-brand-100 transition-colors flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
+                      </div>
+                      <span class="font-semibold text-slate-900 text-sm">Artificial Intelligence</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">Machine Learning · Low/No Code Solutions</p>
+                  </a>
+
+                  <!-- Hosting -->
+                  <a href="#services" class="flex flex-col gap-2 p-3.5 rounded-xl hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-lg bg-brand-50 group-hover:bg-brand-100 transition-colors flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                      </div>
+                      <span class="font-semibold text-slate-900 text-sm">Hosting</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">Enterprise · IaaS · Disaster Recovery · Hybrid Cloud · Scalability</p>
+                  </a>
+
+                  <!-- IT Advisory -->
+                  <a href="#services" class="flex flex-col gap-2 p-3.5 rounded-xl hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-lg bg-brand-50 group-hover:bg-brand-100 transition-colors flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                      </div>
+                      <span class="font-semibold text-slate-900 text-sm">IT Advisory</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">Strategy · Fractional CIO · Digital Transformation · Staff Aug</p>
+                  </a>
+
+                </div>
+              </div>
+              <div class="bg-slate-50 border-t border-slate-100 px-6 py-3.5 flex items-center justify-between">
+                <span class="text-slate-500 text-sm">Not sure which service fits your needs?</span>
+                <a href="#contact" class="inline-flex items-center gap-1.5 bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors">
+                  Get in Touch
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ── Technologies mega menu ──────────────────────── -->
+        <li class="relative mega-item">
+          <button class="nav-link hover:text-brand-600 transition-colors flex items-center gap-1 py-1">
+            Technologies
+            <svg class="mega-chevron w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="mega-panel" style="width:860px">
+            <div class="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
+              <div class="p-6">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">Technology Stack</p>
+                <div class="grid grid-cols-4 gap-6">
+
+                  <!-- Database Technologies -->
+                  <div>
+                    <div class="flex items-center gap-2 mb-3 pb-2.5 border-b border-slate-100">
+                      <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 5v4c0 1.657 4.03 3 9 3s9-1.343 9-3V5M3 9v4c0 1.657 4.03 3 9 3s9-1.343 9-3V9M3 13v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4"/></svg>
+                      <span class="text-xs font-bold text-slate-700 uppercase tracking-wide">Databases</span>
+                    </div>
+                    <ul class="space-y-1.5 text-sm text-slate-600">
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>MySQL</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>SQL Server</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>PostgreSQL</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>DB2</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Oracle</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Amazon Aurora</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>MariaDB</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>MongoDB</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Redshift</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Snowflake</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Application Platforms -->
+                  <div>
+                    <div class="flex items-center gap-2 mb-3 pb-2.5 border-b border-slate-100">
+                      <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4"/></svg>
+                      <span class="text-xs font-bold text-slate-700 uppercase tracking-wide">App Platforms</span>
+                    </div>
+                    <ul class="space-y-1.5 text-sm text-slate-600">
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Oracle Platforms</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>JD Edwards</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>PeopleSoft</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Nextworld</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>E-Business Suite</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Cloud Platforms -->
+                  <div>
+                    <div class="flex items-center gap-2 mb-3 pb-2.5 border-b border-slate-100">
+                      <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                      <span class="text-xs font-bold text-slate-700 uppercase tracking-wide">Cloud Platforms</span>
+                    </div>
+                    <ul class="space-y-1.5 text-sm text-slate-600">
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Amazon AWS</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Microsoft Azure</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Google Cloud (GCP)</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Oracle Cloud (OCI)</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- BI & Low-Code -->
+                  <div>
+                    <div class="flex items-center gap-2 mb-3 pb-2.5 border-b border-slate-100">
+                      <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                      <span class="text-xs font-bold text-slate-700 uppercase tracking-wide">BI &amp; Low-Code</span>
+                    </div>
+                    <ul class="space-y-1.5 text-sm text-slate-600">
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Power BI</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Tableau</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Power Apps</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Power Automate</a></li>
+                      <li><a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Boomi</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+              <div class="bg-brand-950 px-6 py-3 flex items-center gap-3">
+                <svg class="w-4 h-4 text-brand-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span class="text-brand-200 text-xs">Vendor-agnostic — we recommend what's right for <em>your</em> environment, not what pays us the best referral.</span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="#" class="nav-link hover:text-brand-600 transition-colors">Insights</a></li>
+        <li><a href="#" class="nav-link hover:text-brand-600 transition-colors">Careers</a></li>
+        <li><a href="#" class="nav-link hover:text-brand-600 transition-colors text-brand-600 font-semibold">Client Login</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="#contact" class="hidden lg:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+        Get Started
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-toggle" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Toggle menu">
+        <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 py-4">
+      <ul class="flex flex-col text-sm font-medium text-slate-600">
+
+        <li class="border-b border-slate-100"><a href="#why-us" class="block py-3 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()">About</a></li>
+
+        <!-- Services expandable -->
+        <li class="border-b border-slate-100">
+          <button onclick="toggleMobileSection('mob-services', this)" class="w-full flex items-center justify-between py-3 hover:text-brand-600 transition-colors">
+            Services
+            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mob-services" class="hidden pb-3 pl-3 space-y-1.5">
+            <a href="#services" class="flex items-center gap-2 py-1 text-slate-500 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Database Services</a>
+            <a href="#services" class="flex items-center gap-2 py-1 text-slate-500 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Enterprise Applications</a>
+            <a href="#services" class="flex items-center gap-2 py-1 text-slate-500 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Data &amp; Analytics</a>
+            <a href="#services" class="flex items-center gap-2 py-1 text-slate-500 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Artificial Intelligence</a>
+            <a href="#services" class="flex items-center gap-2 py-1 text-slate-500 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Hosting</a>
+            <a href="#services" class="flex items-center gap-2 py-1 text-slate-500 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>IT Advisory</a>
+          </div>
+        </li>
+
+        <!-- Technologies expandable -->
+        <li class="border-b border-slate-100">
+          <button onclick="toggleMobileSection('mob-technologies', this)" class="w-full flex items-center justify-between py-3 hover:text-brand-600 transition-colors">
+            Technologies
+            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mob-technologies" class="hidden pb-3 pl-3">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-2 mb-2">Databases</p>
+            <div class="space-y-1 mb-3 text-slate-500">
+              <a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>MySQL · SQL Server · PostgreSQL</a>
+              <a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>DB2 · Oracle · Aurora · MariaDB</a>
+              <a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>MongoDB · Redshift · Snowflake</a>
+            </div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">App Platforms</p>
+            <div class="space-y-1 mb-3 text-slate-500">
+              <a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>JD Edwards · PeopleSoft · Nextworld</a>
+            </div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Cloud &amp; BI</p>
+            <div class="space-y-1 text-slate-500">
+              <a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>AWS · Azure · GCP · OCI</a>
+              <a href="#services" class="flex items-center gap-2 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()"><span class="w-1.5 h-1.5 rounded-full bg-brand-300 flex-shrink-0"></span>Power BI · Tableau · Boomi</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="border-b border-slate-100"><a href="#" class="block py-3 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()">Insights</a></li>
+        <li class="border-b border-slate-100"><a href="#" class="block py-3 hover:text-brand-600 transition-colors" onclick="closeMobileMenu()">Careers</a></li>
+        <li class="border-b border-slate-100"><a href="#" class="block py-3 text-brand-600 font-semibold" onclick="closeMobileMenu()">Client Login</a></li>
+        <li class="pt-3"><a href="#contact" class="block bg-brand-600 text-white text-center py-2.5 rounded-lg font-semibold" onclick="closeMobileMenu()">Get Started</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section class="hero-gradient pt-32 pb-24 px-6 text-white relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 right-10 w-96 h-96 rounded-full bg-brand-400 blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-brand-800 blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          Enterprise technology, personal service
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+          Enterprise solutions<br/>
+          <span class="text-brand-300">built to perform.</span>
+        </h1>
+        <p class="text-xl text-blue-100 leading-relaxed mb-10 max-w-2xl">
+          Main Street Tech delivers database management, enterprise applications, data analytics, IT advisory, and hosting — the critical infrastructure your organization depends on.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white text-brand-700 font-bold px-8 py-4 rounded-xl hover:bg-brand-50 transition-colors text-base shadow-lg">
+            Let&apos;s Talk
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors text-base">
+            See Our Services
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="mt-16 flex flex-wrap gap-8">
+          <div>
+            <div class="text-4xl font-extrabold text-white">200+</div>
+            <div class="text-blue-200 text-sm mt-1">Clients Served</div>
+          </div>
+          <div class="w-px bg-white/20"></div>
+          <div>
+            <div class="text-4xl font-extrabold text-white">10+</div>
+            <div class="text-blue-200 text-sm mt-1">Years Experience</div>
+          </div>
+          <div class="w-px bg-white/20"></div>
+          <div>
+            <div class="text-4xl font-extrabold text-white">98%</div>
+            <div class="text-blue-200 text-sm mt-1">Client Retention</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Services ──────────────────────────────────────── -->
+  <section id="services" class="py-24 px-6 bg-slate-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">What We Do</span>
+        <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-4">Enterprise services. Practical delivery.</h2>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto">From managing mission-critical databases to advising on technology strategy, we bring enterprise-grade expertise to every engagement.</p>
+      </div>
+
+      <!-- 5-card layout: 3 on top, 2 centered on bottom -->
+      <div class="grid md:grid-cols-3 gap-6 mb-6">
+
+        <!-- Card 1: Database Management -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <ellipse cx="12" cy="5" rx="9" ry="3" stroke="currentColor" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 5v4c0 1.657 4.03 3 9 3s9-1.343 9-3V5M3 9v4c0 1.657 4.03 3 9 3s9-1.343 9-3V9M3 13v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Database Management</h3>
+          <p class="text-slate-500 leading-relaxed">Design, optimize, and maintain the databases your operations depend on. We handle performance tuning, migrations, security hardening, and disaster recovery across SQL and NoSQL platforms.</p>
+          <a href="/services" class="inline-flex items-center gap-1 text-brand-600 font-semibold text-sm mt-5 hover:text-brand-700 transition-colors">
+            Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 2: Enterprise Applications -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Enterprise Applications</h3>
+          <p class="text-slate-500 leading-relaxed">Implement, integrate, and support the enterprise software your teams rely on. From ERP and CRM rollouts to custom integrations, we bridge the gap between platforms and processes.</p>
+          <a href="/services" class="inline-flex items-center gap-1 text-brand-600 font-semibold text-sm mt-5 hover:text-brand-700 transition-colors">
+            Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 3: Data & Analytics -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Data &amp; Analytics</h3>
+          <p class="text-slate-500 leading-relaxed">Turn raw data into decisions. We build data pipelines, dashboards, and reporting infrastructure that give your leadership team clear, actionable visibility into what matters most.</p>
+          <a href="/services" class="inline-flex items-center gap-1 text-brand-600 font-semibold text-sm mt-5 hover:text-brand-700 transition-colors">
+            Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 md:max-w-2xl lg:max-w-3xl mx-auto">
+
+        <!-- Card 4: IT Advisory -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">IT Advisory</h3>
+          <p class="text-slate-500 leading-relaxed">Strategic guidance from experienced practitioners. We assess your current environment, identify gaps, and deliver a clear technology roadmap aligned to your business goals and budget.</p>
+          <a href="/services" class="inline-flex items-center gap-1 text-brand-600 font-semibold text-sm mt-5 hover:text-brand-700 transition-colors">
+            Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 5: Hosting -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12H3m18 0h-2M5.636 5.636L4.222 4.222m15.556 15.556l-1.414-1.414M12 5V3m0 18v-2m6.364-13.364l-1.414 1.414M5.636 18.364l-1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Hosting</h3>
+          <p class="text-slate-500 leading-relaxed">Reliable, managed hosting for applications, databases, and websites. We handle the infrastructure — uptime monitoring, security patching, backups, and scaling — so your team doesn't have to.</p>
+          <a href="/services" class="inline-flex items-center gap-1 text-brand-600 font-semibold text-sm mt-5 hover:text-brand-700 transition-colors">
+            Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Why Us ─────────────────────────────────────────── -->
+  <section id="why-us" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Left: Visual -->
+        <div class="relative">
+          <div class="hero-gradient rounded-3xl p-10 text-white">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="bg-white/10 rounded-2xl p-6 text-center">
+                <div class="text-4xl font-extrabold">24/7</div>
+                <div class="text-blue-200 text-sm mt-1">Support Available</div>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-6 text-center">
+                <div class="text-4xl font-extrabold">&lt;2hr</div>
+                <div class="text-blue-200 text-sm mt-1">Avg. Response Time</div>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-6 text-center">
+                <div class="text-4xl font-extrabold">No</div>
+                <div class="text-blue-200 text-sm mt-1">Long-term Contracts</div>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-6 text-center">
+                <div class="text-4xl font-extrabold">Local</div>
+                <div class="text-blue-200 text-sm mt-1">Team, Always</div>
+              </div>
+            </div>
+            <div class="mt-8 border-t border-white/20 pt-6 text-center">
+              <p class="text-blue-100 text-sm">"We treat your business like it's our own — because our reputation depends on it."</p>
+              <p class="text-white font-semibold mt-2">— Main Street Tech Team</p>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-slate-100">
+            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-sm">5-star rated</div>
+              <div class="text-slate-400 text-xs">on Google Reviews</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div>
+          <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Why Main Street Tech</span>
+          <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Senior expertise. No handoffs to juniors.</h2>
+          <p class="text-slate-500 text-lg leading-relaxed mb-8">
+            Large consulting firms load up on junior staff after the sale. At Main Street Tech, experienced practitioners lead and deliver every engagement — from day one through go-live.
+          </p>
+          <ul class="space-y-5">
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold text-slate-900">Transparent, fixed-scope pricing</div>
+                <div class="text-slate-500 text-sm mt-0.5">No surprise invoices. Every engagement starts with a clear scope, timeline, and cost.</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold text-slate-900">Direct access to your team</div>
+                <div class="text-slate-500 text-sm mt-0.5">Reach the people actually doing the work. No account managers standing in the way.</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold text-slate-900">Vendor-agnostic recommendations</div>
+                <div class="text-slate-500 text-sm mt-0.5">We recommend what's right for your environment — not whatever pays us the best referral fee.</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold text-slate-900">Built for your industry's compliance needs</div>
+                <div class="text-slate-500 text-sm mt-0.5">Security, audit trails, and documentation standards that hold up under scrutiny.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Process ────────────────────────────────────────── -->
+  <section id="process" class="py-24 px-6 bg-slate-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">How It Works</span>
+        <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-4">Simple, clear process</h2>
+        <p class="text-slate-500 text-lg max-w-xl mx-auto">From first call to ongoing support — here's exactly what to expect when you work with us.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8 relative">
+        <!-- Connector line (desktop) -->
+        <div class="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-brand-200 via-brand-400 to-brand-200"></div>
+
+        <div class="text-center relative">
+          <div class="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center mx-auto mb-5 shadow-lg shadow-brand-200">
+            <span class="text-white font-bold text-xl">1</span>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2">Discovery Call</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">We listen first. Tell us about your business and challenges — no sales pitch, just honest conversation.</p>
+        </div>
+
+        <div class="text-center relative">
+          <div class="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center mx-auto mb-5 shadow-lg shadow-brand-200">
+            <span class="text-white font-bold text-xl">2</span>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2">Custom Plan</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">We put together a clear proposal with scope, timeline, and pricing — everything written in plain English.</p>
+        </div>
+
+        <div class="text-center relative">
+          <div class="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center mx-auto mb-5 shadow-lg shadow-brand-200">
+            <span class="text-white font-bold text-xl">3</span>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2">We Build &amp; Deploy</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Our team executes with regular updates. You're always in the loop — no surprises at delivery.</p>
+        </div>
+
+        <div class="text-center relative">
+          <div class="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center mx-auto mb-5 shadow-lg shadow-brand-200">
+            <span class="text-white font-bold text-xl">4</span>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2">Ongoing Support</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">We don't disappear after launch. Ongoing support plans keep everything running smoothly long-term.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Testimonials ───────────────────────────────────── -->
+  <section id="testimonials" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Client Stories</span>
+        <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-4">Trusted by organizations that can't afford downtime</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover">
+          <div class="flex gap-1 mb-5">
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-6">"Main Street Tech took over our SQL Server environment and immediately identified three performance bottlenecks we'd been living with for years. Query times dropped by 60% within the first two weeks."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">S</div>
+            <div>
+              <div class="font-semibold text-slate-900 text-sm">Sarah M.</div>
+              <div class="text-slate-400 text-xs">VP of Operations, Regional Healthcare Network</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover">
+          <div class="flex gap-1 mb-5">
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-6">"We brought in Main Street Tech for IT advisory during a major ERP migration. Their guidance prevented what would have been a catastrophic data integration failure. Worth far more than what we paid."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">J</div>
+            <div>
+              <div class="font-semibold text-slate-900 text-sm">James T.</div>
+              <div class="text-slate-400 text-xs">CTO, Mid-Market Logistics Company</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover">
+          <div class="flex gap-1 mb-5">
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-6">"The analytics dashboards Main Street Tech built gave our executive team real-time visibility we'd never had before. Decisions that used to take weeks now happen in hours."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">R</div>
+            <div>
+              <div class="font-semibold text-slate-900 text-sm">Rachel K.</div>
+              <div class="text-slate-400 text-xs">Director of Finance, Municipal Government</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA Banner ─────────────────────────────────────── -->
+  <section class="py-20 px-6 hero-gradient text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-5">Let's talk about your technology.</h2>
+      <p class="text-blue-100 text-xl mb-10 max-w-2xl mx-auto">Whether you're modernizing a legacy system, scaling your data infrastructure, or need a strategic IT roadmap — we're ready to help.</p>
+      <a href="#contact" class="inline-flex items-center gap-2 bg-white text-brand-700 font-bold px-10 py-4 rounded-xl hover:bg-brand-50 transition-colors text-base shadow-xl">
+        Get in Touch
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Contact ────────────────────────────────────────── -->
+  <section id="contact" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <!-- Left -->
+        <div>
+          <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+          <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-5">Let's talk about your business</h2>
+          <p class="text-slate-500 text-lg leading-relaxed mb-10">
+            Whether you have a specific project in mind or just want to explore your options, we're happy to have a no-pressure conversation.
+          </p>
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold text-slate-900">Call or Text Us</div>
+                <div class="text-brand-600 font-medium">Update with your phone number</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold text-slate-900">Email Us</div>
+                <div class="text-brand-600 font-medium">Update with your email</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold text-slate-900">Our Location</div>
+                <div class="text-slate-500">Update with your city/state</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+          <h3 class="text-xl font-bold text-slate-900 mb-6">Send us a message</h3>
+          <form class="space-y-5" onsubmit="handleSubmit(event)">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1.5">First Name</label>
+                <input type="text" required placeholder="Jane" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent bg-white text-sm transition" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1.5">Last Name</label>
+                <input type="text" required placeholder="Doe" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent bg-white text-sm transition" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1.5">Email Address</label>
+              <input type="email" required placeholder="jane@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent bg-white text-sm transition" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1.5">Business Name (optional)</label>
+              <input type="text" placeholder="Acme LLC" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent bg-white text-sm transition" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1.5">How can we help?</label>
+              <select class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent bg-white text-sm transition">
+                <option value="">Select a service...</option>
+                <option>Database Management</option>
+                <option>Enterprise Applications</option>
+                <option>Data &amp; Analytics</option>
+                <option>IT Advisory</option>
+                <option>Hosting</option>
+                <option>Multiple services / not sure yet</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1.5">Message</label>
+              <textarea rows="4" required placeholder="Tell us a bit about your project or question..." class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent bg-white text-sm transition resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2">
+              Send Message
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+              </svg>
+            </button>
+          </form>
+          <div id="form-success" class="hidden mt-4 bg-green-50 border border-green-200 text-green-800 rounded-xl px-5 py-4 text-sm font-medium">
+            Thanks! We'll be in touch within one business day.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <footer class="bg-slate-950 text-slate-400 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="#top">
+          <svg class="h-10 w-auto" preserveAspectRatio="xMidYMid meet" data-bbox="53.679 165.453 644.619 299.078" viewBox="53.679 165.453 644.619 299.078" xmlns="http://www.w3.org/2000/svg" aria-label="Main Street Tech">
+            <!-- Lamp icon — bright blue on dark bg -->
+            <g fill="#38a3f7">
+              <path d="M223.007 222.89c-5.168 8.731-11.615 3.363-18.673 1.51l14.613 37.19c9.65-3.044 10.578-4.363 10.728-13.007.264-15.148.656-30.293 1.013-45.44.023-.968.202-1.932.286-2.696 1.561-1.101 2.823-.496 4.061-.096 10.133 3.268 20.245 6.601 30.4 9.799 2.766.87 4.142 2.312 3.975 5.373-.146 2.669-.245 5.256-1.184 7.83-4.619 12.66-9.25 25.32-13.596 38.075-1.223 3.587-3.066 4.93-6.835 4.985-8.426.12-8.449.309-8.456 8.86-.018 22.321-.083 44.643.05 66.964.023 3.87-1.134 5.281-5.13 5.205-4.031-.077-4.605-2.088-4.59-5.373.066-15.325.015-30.65.005-45.975-.006-7.496-.252-15.003.07-22.485.187-4.318-1.474-6.582-5.567-6.096-5.734.68-7.777-2.313-9.475-7.117-4.214-11.921-8.819-23.708-13.469-35.468-1.332-3.368-.77-5.424 2.287-7.473 7.698-5.162 15.192-10.628 24.089-16.905-1.392 8.385 2.77 16.136-4.602 22.34m28.732 2.123c-5.125-2.45-9.17-6.755-14.82-9.054-1.071 12.432-.376 24.388-.634 36.323-.049 2.233.971 3.376 2.994 3.898 3.432.886 6.549 3.263 10.352 2.287.449-.116.777-1.034 1-1.64 4.593-12.393 9.162-24.795 14-37.909-4.54 2.307-8.34 4.238-12.892 6.095"></path>
+              <path d="M223.116 189.063c4.92-5.281 5.08-12.169 7.62-18.07.762-1.772.63-4.01 3.257-5.54 1.772 4.909 3.775 9.59 5.12 14.454 1.139 4.12 3.374 7.018 6.81 9.425 5.996 4.202 11.84 8.627 17.653 13.082 1.355 1.04 3.344 1.654 3.652 4.165-2.537.153-4.5-1.225-6.554-2.05-7.565-3.04-15.144-6.06-22.585-9.386-3.259-1.457-5.775-1.26-8.735.805-6.821 4.76-13.889 9.166-20.859 13.713-1.34.874-2.6 1.942-5.872 2.266 7.33-8.18 13.79-15.39 20.493-22.864"></path>
+            </g>
+            <!-- Text + rule — white on dark bg -->
+            <g fill="white">
+              <path d="M69.005 378.804c207.753.015 415.006.024 622.26.118 2.69 0 6.887-1.82 7.03 3.625.057 2.147-.675 3.569-3.06 3.609-1.5.025-2.998.05-4.498.05q-313.878.015-627.758.022c-1.999 0-3.998-.045-5.997-.067-2.637-.03-3.335-1.58-3.302-3.941.032-2.304 1.08-3.37 3.33-3.375 3.832-.009 7.664-.026 11.995-.04"></path>
+              <path d="M71.268 344.146c-2.226 5.468-6.17 2.495-10.444 3.016l15.518-80.782 1.536-.117 27.175 62.37 27.198-62.192 1.66.186 15.275 79.69c-7.893 2.373-9.39 1.62-10.792-5.421-2.627-13.2-5.155-26.42-7.733-39.63-.185-.95-.146-2.013-1.666-2.976l-23.104 51.258-1.456.238-24.033-53.342c-3.19 16.615-6.133 31.941-9.134 47.702"></path>
+              <path d="M324.306 304v45.282l-1.487.79-57.663-60.057c-1.3 1.949-.847 3.78-.854 5.464-.056 15.49-.114 30.98-.026 46.468.02 3.599-.776 5.523-4.981 5.475-3.944-.046-4.686-1.786-4.667-5.197.097-17.155.034-34.31.03-51.465q-.003-11.448-.001-22.895l1.38-.853 57.67 60.284c1.445-2.191.916-4.063.922-5.808.055-15.49.095-30.98-.01-46.468-.023-3.52.541-5.51 4.844-5.49 4.248.02 4.944 1.92 4.89 5.49-.143 9.491-.048 18.986-.047 28.98"></path>
+              <path d="M502.67 336.29a28496 28496 0 0 0-15.688-22.506c-2.079 5.706-1.501 10.985-1.617 16.219-.1 4.494-.15 8.995-.007 13.486.102 3.215-1.54 3.936-4.325 3.872-2.67-.062-5.156-.059-5.116-3.726.015-1.332-.043-2.664-.044-3.996-.022-20.982-.048-41.964-.055-62.946-.002-7.029.023-7.064 7.247-7.031 6.305.028 12.628-.43 18.809 1.553 9.386 3.011 14.156 9.04 14.439 18.647.31 10.59-4.523 18.35-13.468 21.623l-4.918 1.804 23.103 32.93c-8.047 2.426-10.459 1.69-14.231-3.845-1.313-1.927-2.62-3.856-4.129-6.084m-17.31-43.795c.005 2.986.004 5.971.016 8.957.006 1.382.244 2.583 1.752 3.23 7.865 3.37 19.273-3.7 19.547-12.146.294-9.056-4.188-13.354-14.738-14.136-5.929-.439-6.51.099-6.57 6.143-.022 2.322-.005 4.644-.006 7.952"></path>
+              <path d="M166.927 333.83c-1.133 2.644-2.101 4.943-3.08 7.238-2.994 7.018-3.72 7.363-12.785 5.396l35.035-79.689 1.51-.273 34.168 79.684c-7.903 2.568-9.729 1.788-12.437-4.759-1.59-3.842-3.301-7.638-4.74-11.535-1.197-3.246-3.152-4.68-6.742-4.539-6.148.243-12.364.563-18.456-.066-6.76-.697-10.849 1.49-12.473 8.544m14.54-33.961-6.856 16.357h24.039l-11.893-28.496c-2.08 4.796-3.524 8.123-5.29 12.139"></path>
+              <path d="M556.996 269.65c3.995.004 7.497.13 10.986-.024 3.232-.144 4.386 1.18 4.376 4.397-.01 3.252-1.268 4.412-4.452 4.355-7.156-.128-14.325.181-21.472-.1-4.247-.167-5.648 1.478-5.366 5.51.232 3.312.273 6.675-.012 9.98-.405 4.693 1.243 6.642 6.164 6.377 6.308-.34 12.649-.023 18.974-.086 3.293-.033 5.25.735 5.24 4.739-.009 4.086-2.04 4.598-5.318 4.537-6.656-.124-13.32.1-19.975-.082-3.52-.097-5.226.906-5.11 4.753.203 6.653.204 13.321-.008 19.974-.123 3.863 1.59 4.818 5.108 4.727 7.154-.186 14.317.01 21.474-.07 2.911-.033 4.72.57 4.721 4.09.003 3.452-1.274 4.707-4.713 4.663-10.653-.138-21.309-.1-31.963-.022-2.808.02-4.109-.663-4.207-3.906-.677-22.468-.151-44.94-.458-67.408-.067-4.91 1.38-6.863 6.54-6.507 6.296.434 12.645.103 19.47.103"></path>
+              <path d="M596.2 310.196c-1.535 8.585-.508 16.908-.817 25.202-.12 3.194 2.084 3.262 4.393 3.257 7.494-.016 14.989.079 22.481-.026 3.15-.045 5.008.65 5.012 4.377.004 3.71-1.799 4.42-4.977 4.385-10.49-.11-20.984-.154-31.474 0-3.7.054-5.002-1.403-4.992-4.996a8645 8645 0 0 0-.058-67.946c-.019-3.731 1.453-4.914 5.056-4.86 10.489.16 20.983.129 31.473.02 3.221-.034 4.958.785 4.95 4.44-.007 3.753-1.968 4.374-5.078 4.33-7.16-.104-14.325.114-21.48-.086-3.764-.106-5.594.994-5.344 5.064.244 3.981.194 7.998-.012 11.984-.18 3.471 1.23 4.787 4.645 4.734 6.992-.108 13.988.023 20.983.016 3.214-.004 5.36.704 5.34 4.73-.02 4.096-2.208 4.45-5.426 4.526-8.128.193-16.283-.754-24.676.849"></path>
+              <path d="M402.156 346.478c-14.87 5.22-28.045.133-33.312-12.66-.966-2.347-2.64-5.078 1.36-6.557 3.33-1.232 5.868-2.137 7.577 2.75 2.692 7.7 10.265 11.277 17.649 9.35 7.094-1.85 11.69-8.09 11.229-15.134-.288-4.39-2.696-7.356-6.147-9.737-4.573-3.154-9.92-4.671-14.82-7.12-6.212-3.104-12.019-6.728-13.91-14.07-3.771-14.642 8.342-26.039 22.812-25.162 6.918.419 12.823 3.29 16.994 9.155 1.5 2.11 1.83 3.873-.784 5.322-2.179 1.208-4.184 3.896-6.652.275-2.993-4.39-7.26-6.118-12.526-5.588-4.943.498-8.585 2.908-10.103 7.626-1.545 4.807.038 8.776 4.295 11.7 4.167 2.86 8.945 4.385 13.454 6.502 6.872 3.228 13.43 6.887 15.995 14.772 3.518 10.814-1.466 21.848-13.11 28.576"></path>
+              <path d="M442 269.65c7.66.003 14.82.1 21.977-.032 3.206-.058 4.41 1.135 4.396 4.38-.014 3.228-1.199 4.534-4.415 4.375-3.155-.156-6.336.137-9.485-.074-3.907-.262-5.216 1.303-5.188 5.217.144 19.645-.007 39.293.11 58.938.022 3.6-1.041 5.01-4.817 4.983-3.801-.027-4.897-1.59-4.858-5.106.114-10.321.028-20.645.023-30.967-.004-9.324-.156-18.652.065-27.97.094-3.977-1.338-5.402-5.227-5.096-3.143.248-6.326-.06-9.485.061-3.135.12-4.09-1.517-4.007-4.314.078-2.606.629-4.513 3.93-4.423 5.49.149 10.987.033 16.981.028"></path>
+              <path d="M662.18 289.041c-.008 17.962-.03 35.43-.008 52.897.004 3.095-.233 5.475-4.445 5.494-3.896.018-5.195-1.234-5.159-5.167.165-17.965.099-35.933.058-53.9-.025-11.224 1.074-9.92-9.755-10.018-1.497-.014-3.001-.105-4.49.006-3.414.254-4.715-1.216-4.738-4.662-.025-3.545 1.79-4.08 4.696-4.064 12.643.07 25.287.08 37.93-.01 3.008-.02 4.74.792 4.723 4.15-.019 3.358-1.393 4.934-4.84 4.58-1.317-.136-2.66-.038-3.99-.019-11.279.166-9.84-1.496-9.983 10.713"></path>
+            </g>
+          </svg>
+        </a>
+        <nav class="flex flex-wrap justify-center gap-6 text-sm">
+          <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#why-us" class="hover:text-white transition-colors">Why Us</a>
+          <a href="#process" class="hover:text-white transition-colors">Process</a>
+          <a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </nav>
+        <div class="text-sm">&copy; 2026 Main Street Tech. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Mega menu hover ─────────────────────────────────
+    document.querySelectorAll('.mega-item').forEach(item => {
+      let timer;
+      const panel = item.querySelector('.mega-panel');
+
+      function openPanel() {
+        clearTimeout(timer);
+        document.querySelectorAll('.mega-panel').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.mega-item').forEach(i => i.classList.remove('open'));
+        panel.classList.add('open');
+        item.classList.add('open');
+      }
+      function closePanel() {
+        timer = setTimeout(() => {
+          panel.classList.remove('open');
+          item.classList.remove('open');
+        }, 120);
+      }
+
+      item.addEventListener('mouseenter', openPanel);
+      item.addEventListener('mouseleave', closePanel);
+      panel.addEventListener('mouseenter', () => clearTimeout(timer));
+      panel.addEventListener('mouseleave', closePanel);
+    });
+
+    // Close mega menus on outside click
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.mega-item')) {
+        document.querySelectorAll('.mega-panel').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.mega-item').forEach(i => i.classList.remove('open'));
+      }
+    });
+
+    // ── Mobile menu ─────────────────────────────────────
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    function closeMobileMenu() {
+      document.getElementById('mobile-menu').classList.add('hidden');
+    }
+
+    function toggleMobileSection(id, btn) {
+      const el = document.getElementById(id);
+      const chevron = btn.querySelector('svg');
+      const isOpen = !el.classList.contains('hidden');
+      el.classList.toggle('hidden', isOpen);
+      chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+    }
+
+    // ── Smooth scroll ────────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ── Contact form demo handler ─────────────────────────
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').classList.remove('hidden');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
