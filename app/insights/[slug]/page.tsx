@@ -190,7 +190,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             {/* Category pills */}
             {post.categories && post.categories.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-5 items-center">
-                {post.categories.map((cat) => (
+                {post.categories.filter((cat) => cat?.slug?.current).map((cat) => (
                   <Link
                     key={cat._id}
                     href={`/insights?category=${cat.slug.current}`}
@@ -268,7 +268,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <div className="mt-14 pt-10 border-t border-slate-100">
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Tagged</p>
                 <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
+                  {post.tags.filter((tag) => tag?.slug?.current).map((tag) => (
                     <Link
                       key={tag._id}
                       href={`/insights?tag=${tag.slug.current}`}
