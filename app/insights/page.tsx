@@ -10,6 +10,17 @@ export const metadata: Metadata = {
   title: 'Insights | Main Street Tech',
   description:
     'Technology insights, best practices, and expert perspectives from the Main Street Tech team.',
+  openGraph: {
+    title: 'Insights | Main Street Tech',
+    description:
+      'Technology insights, best practices, and expert perspectives from the Main Street Tech team.',
+    url: 'https://www.mainstreettech.com/insights',
+  },
+  twitter: {
+    title: 'Insights | Main Street Tech',
+    description:
+      'Technology insights, best practices, and expert perspectives from the Main Street Tech team.',
+  },
 };
 
 const POSTS_PER_PAGE = 9;
@@ -120,7 +131,7 @@ export default async function InsightsPage({
 
         {/* ── Category Filter ────────────────────────────── */}
         {categories.length > 0 && (
-          <div className="bg-white border-b border-slate-100 sticky top-18 z-40">
+          <div className="bg-white border-b border-slate-100 top-18 z-40"> 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center gap-2">
               <Link
                 href="/insights"

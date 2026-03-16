@@ -6,6 +6,17 @@ export const metadata: Metadata = {
   title: 'Hosting Services | Main Street Tech',
   description:
     'Enterprise hosting, IaaS, disaster recovery, and hybrid cloud architecture designed for compliance, high availability, and scalability — across AWS, Azure, GCP, and OCI.',
+  openGraph: {
+    title: 'Hosting Services | Main Street Tech',
+    description:
+      'Enterprise hosting, IaaS, disaster recovery, and hybrid cloud architecture designed for compliance, high availability, and scalability — across AWS, Azure, GCP, and OCI.',
+    url: 'https://www.mainstreettech.com/services/hosting',
+  },
+  twitter: {
+    title: 'Hosting Services | Main Street Tech',
+    description:
+      'Enterprise hosting, IaaS, disaster recovery, and hybrid cloud architecture designed for compliance, high availability, and scalability — across AWS, Azure, GCP, and OCI.',
+  },
 };
 
 function ArrowIcon({ className = 'w-5 h-5' }: { className?: string }) {

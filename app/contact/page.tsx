@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: 'Contact Us | Main Street Tech',
   description:
     'Get in touch with the Main Street Tech team. Ready to help with database management, enterprise applications, data analytics, and more.',
+  openGraph: {
+    title: 'Contact Us | Main Street Tech',
+    description:
+      'Get in touch with the Main Street Tech team. Ready to help with database management, enterprise applications, data analytics, and more.',
+    url: 'https://www.mainstreettech.com/contact',
+  },
+  twitter: {
+    title: 'Contact Us | Main Street Tech',
+    description:
+      'Get in touch with the Main Street Tech team. Ready to help with database management, enterprise applications, data analytics, and more.',
+  },
 };
 
 export default function ContactPage() {

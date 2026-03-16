@@ -1,4 +1,22 @@
+import type { Metadata } from 'next';
 import Header from './components/Header';
+
+export const metadata: Metadata = {
+  title: 'Main Street Tech | Enterprise Technology Solutions',
+  description:
+    'Main Street Tech delivers enterprise-grade database management, application services, data analytics, IT advisory, and hosting solutions built for organizations that demand reliability and performance.',
+  openGraph: {
+    title: 'Main Street Tech | Enterprise Technology Solutions',
+    description:
+      'Main Street Tech delivers enterprise-grade database management, application services, data analytics, IT advisory, and hosting solutions built for organizations that demand reliability and performance.',
+    url: 'https://www.mainstreettech.com',
+  },
+  twitter: {
+    title: 'Main Street Tech | Enterprise Technology Solutions',
+    description:
+      'Main Street Tech delivers enterprise-grade database management, application services, data analytics, IT advisory, and hosting solutions built for organizations that demand reliability and performance.',
+  },
+};
 import Hero from './components/Hero';
 import Services from './components/Services';
 import WhyUs from './components/WhyUs';

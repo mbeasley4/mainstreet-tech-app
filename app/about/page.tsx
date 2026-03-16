@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: 'About Us | Main Street Tech',
   description:
     'Main Street Tech is an enterprise technology firm built on a simple promise: senior experts, no handoffs, and technology decisions made in your best interest.',
+  openGraph: {
+    title: 'About Us | Main Street Tech',
+    description:
+      'Main Street Tech is an enterprise technology firm built on a simple promise: senior experts, no handoffs, and technology decisions made in your best interest.',
+    url: 'https://www.mainstreettech.com/about',
+  },
+  twitter: {
+    title: 'About Us | Main Street Tech',
+    description:
+      'Main Street Tech is an enterprise technology firm built on a simple promise: senior experts, no handoffs, and technology decisions made in your best interest.',
+  },
 };
 
 function ArrowIcon({ className = 'w-5 h-5' }: { className?: string }) {

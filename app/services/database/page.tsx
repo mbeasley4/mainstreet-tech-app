@@ -6,6 +6,17 @@ export const metadata: Metadata = {
   title: 'Database Services | Main Street Tech',
   description:
     'Remote DBA support, health assessments, performance monitoring, query tuning, version upgrades, and database development across all major platforms — available 24×7.',
+  openGraph: {
+    title: 'Database Services | Main Street Tech',
+    description:
+      'Remote DBA support, health assessments, performance monitoring, query tuning, version upgrades, and database development across all major platforms — available 24×7.',
+    url: 'https://www.mainstreettech.com/services/database',
+  },
+  twitter: {
+    title: 'Database Services | Main Street Tech',
+    description:
+      'Remote DBA support, health assessments, performance monitoring, query tuning, version upgrades, and database development across all major platforms — available 24×7.',
+  },
 };
 
 function ArrowIcon({ className = 'w-5 h-5' }: { className?: string }) {

@@ -6,6 +6,17 @@ export const metadata: Metadata = {
   title: 'Data & Analytics Services | Main Street Tech',
   description:
     'Data strategy, governance, warehousing, visualization, and integration — from raw architecture to Power BI and Tableau dashboards your team can act on.',
+  openGraph: {
+    title: 'Data & Analytics Services | Main Street Tech',
+    description:
+      'Data strategy, governance, warehousing, visualization, and integration — from raw architecture to Power BI and Tableau dashboards your team can act on.',
+    url: 'https://www.mainstreettech.com/services/data-analytics',
+  },
+  twitter: {
+    title: 'Data & Analytics Services | Main Street Tech',
+    description:
+      'Data strategy, governance, warehousing, visualization, and integration — from raw architecture to Power BI and Tableau dashboards your team can act on.',
+  },
 };
 
 function ArrowIcon({ className = 'w-5 h-5' }: { className?: string }) {

@@ -3,9 +3,20 @@ import Footer from '../../components/Footer';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Enterprise Application Services | Main Street Tech',
+  title: 'Artificial Intelligence Services | Main Street Tech',
   description:
-    'Managed services, upgrades, cloud strategy, and system integrations for JD Edwards, PeopleSoft, Oracle E-Business Suite, and Nextworld.',
+    'AI strategy, model integration, and intelligent automation — practical approaches to adopting AI that create real business value without unnecessary complexity.',
+  openGraph: {
+    title: 'Artificial Intelligence Services | Main Street Tech',
+    description:
+      'AI strategy, model integration, and intelligent automation — practical approaches to adopting AI that create real business value without unnecessary complexity.',
+    url: 'https://www.mainstreettech.com/services/artificial-intelligence',
+  },
+  twitter: {
+    title: 'Artificial Intelligence Services | Main Street Tech',
+    description:
+      'AI strategy, model integration, and intelligent automation — practical approaches to adopting AI that create real business value without unnecessary complexity.',
+  },
 };
 
 function ArrowIcon({ className = 'w-5 h-5' }: { className?: string }) {

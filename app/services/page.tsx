@@ -6,6 +6,17 @@ export const metadata: Metadata = {
   title: 'Services | Main Street Tech',
   description:
     'From database management and enterprise applications to data analytics, hosting, and IT advisory — Main Street Tech delivers senior-level expertise across every layer of your technology stack.',
+  openGraph: {
+    title: 'Services | Main Street Tech',
+    description:
+      'From database management and enterprise applications to data analytics, hosting, and IT advisory — Main Street Tech delivers senior-level expertise across every layer of your technology stack.',
+    url: 'https://www.mainstreettech.com/services',
+  },
+  twitter: {
+    title: 'Services | Main Street Tech',
+    description:
+      'From database management and enterprise applications to data analytics, hosting, and IT advisory — Main Street Tech delivers senior-level expertise across every layer of your technology stack.',
+  },
 };
 
 function ArrowIcon({ className = 'w-5 h-5' }: { className?: string }) {

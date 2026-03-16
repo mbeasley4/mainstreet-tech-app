@@ -6,6 +6,17 @@ export const metadata: Metadata = {
   title: 'Enterprise Application Services | Main Street Tech',
   description:
     'Managed services, upgrades, cloud strategy, and system integrations for JD Edwards, PeopleSoft, Oracle E-Business Suite, and Nextworld.',
+  openGraph: {
+    title: 'Enterprise Application Services | Main Street Tech',
+    description:
+      'Managed services, upgrades, cloud strategy, and system integrations for JD Edwards, PeopleSoft, Oracle E-Business Suite, and Nextworld.',
+    url: 'https://www.mainstreettech.com/services/applications',
+  },
+  twitter: {
+    title: 'Enterprise Application Services | Main Street Tech',
+    description:
+      'Managed services, upgrades, cloud strategy, and system integrations for JD Edwards, PeopleSoft, Oracle E-Business Suite, and Nextworld.',
+  },
 };
 
 function ArrowIcon({ className = 'w-5 h-5' }: { className?: string }) {

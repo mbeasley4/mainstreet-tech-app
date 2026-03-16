@@ -8,9 +8,34 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.mainstreettech.com"),
   title: "Main Street Tech | Enterprise Technology Solutions",
   description:
     "Main Street Tech delivers enterprise-grade database management, application services, data analytics, IT advisory, and hosting solutions built for organizations that demand reliability and performance.",
+  openGraph: {
+    siteName: "Main Street Tech",
+    type: "website",
+    locale: "en_US",
+    title: "Main Street Tech | Enterprise Technology Solutions",
+    description:
+      "Main Street Tech delivers enterprise-grade database management, application services, data analytics, IT advisory, and hosting solutions built for organizations that demand reliability and performance.",
+    url: "https://www.mainstreettech.com",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Main Street Tech — Enterprise Technology Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Main Street Tech | Enterprise Technology Solutions",
+    description:
+      "Main Street Tech delivers enterprise-grade database management, application services, data analytics, IT advisory, and hosting solutions built for organizations that demand reliability and performance.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

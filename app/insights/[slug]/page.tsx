@@ -14,6 +14,7 @@ interface Post {
   slug: { current: string };
   publishedAt: string;
   readingTime?: string;
+  excerpt?: string;
   mainImage?: { asset: { _ref: string }; hotspot?: { x: number; y: number } };
   author?: { name: string; image?: { asset: { _ref: string } } };
   categories?: { _id: string; title: string; slug: { current: string } }[];
@@ -24,7 +25,7 @@ interface Post {
 async function getPost(slug: string): Promise<Post | null> {
   return client.fetch(
     `*[_type == "post" && slug.current == $slug][0] {
-      _id, title, slug, publishedAt, readingTime, mainImage,
+      _id, title, slug, publishedAt, readingTime, excerpt, mainImage,
       "categories": categories[]->{ _id, title, slug },
       "tags": tags[]->title, body,
       author->{ name, image }
@@ -48,8 +49,27 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
+  const title = `${post.title} | Main Street Tech`;
+  const description = post.excerpt ?? 'Read the latest insights and expert perspectives from the Main Street Tech team.';
+  const ogImage = post.mainImage
+    ? urlFor(post.mainImage).width(1200).height(630).url()
+    : '/og-image.png';
   return {
-    title: `${post.title} | Main Street Tech`,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://www.mainstreettech.com/insights/${slug}`,
+      type: 'article',
+      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 

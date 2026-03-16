@@ -3,9 +3,20 @@ import Footer from '../../components/Footer';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Enterprise Application Services | Main Street Tech',
+  title: 'IT Advisory Services | Main Street Tech',
   description:
-    'Managed services, upgrades, cloud strategy, and system integrations for JD Edwards, PeopleSoft, Oracle E-Business Suite, and Nextworld.',
+    'Strategic IT advisory, vendor selection, technology roadmapping, and fractional CTO services — senior guidance to help your organization make confident, well-informed technology decisions.',
+  openGraph: {
+    title: 'IT Advisory Services | Main Street Tech',
+    description:
+      'Strategic IT advisory, vendor selection, technology roadmapping, and fractional CTO services — senior guidance to help your organization make confident, well-informed technology decisions.',
+    url: 'https://www.mainstreettech.com/services/advisory',
+  },
+  twitter: {
+    title: 'IT Advisory Services | Main Street Tech',
+    description:
+      'Strategic IT advisory, vendor selection, technology roadmapping, and fractional CTO services — senior guidance to help your organization make confident, well-informed technology decisions.',
+  },
 };
 
 function ArrowIcon({ className = 'w-5 h-5' }: { className?: string }) {
