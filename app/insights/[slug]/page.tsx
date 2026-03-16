@@ -35,10 +35,10 @@ async function getPost(slug: string): Promise<Post | null> {
 }
 
 export async function generateStaticParams() {
-  const slugs = await client.fetch<{ slug: { current: string } }[]>(
-    `*[_type == "post"]{ slug }`
+  const slugs = await client.fetch<{ slug: { current: string } | null }[]>(
+    `*[_type == "post" && defined(slug.current)]{ slug }`
   );
-  return slugs.map((s) => ({ slug: s.slug.current }));
+  return slugs.filter((s) => s.slug?.current).map((s) => ({ slug: s.slug!.current }));
 }
 
 export async function generateMetadata({
