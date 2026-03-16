@@ -26,8 +26,8 @@ async function getPost(slug: string): Promise<Post | null> {
   return client.fetch(
     `*[_type == "post" && slug.current == $slug][0] {
       _id, title, slug, publishedAt, readingTime, excerpt, mainImage,
-      "categories": categories[]->{ _id, title, slug },
-      "tags": tags[]->{ _id, title, slug }, body,
+      "categories": categories[defined(@->)]->{ _id, title, slug }[defined(slug.current)],
+      "tags": tags[defined(@->)]->{ _id, title, slug }[defined(slug.current)], body,
       author->{ name, image }
     }`,
     { slug }
