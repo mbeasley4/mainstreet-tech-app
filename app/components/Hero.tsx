@@ -267,7 +267,7 @@ export default function Hero() {
       </div>
 
       {/* ── MOBILE: single-slide carousel ───────────────────── */}
-      <div className="lg:hidden flex flex-col relative z-10" style={{ minHeight: '60vh' }}>
+      <div className="lg:hidden flex flex-col relative z-10" style={{ minHeight: 'clamp(480px, 60vh, 88vh)' }}>
         {/* slide track */}
         <div className="relative flex-1 overflow-hidden">
           <div
@@ -282,7 +282,7 @@ export default function Hero() {
               <div
                 key={slide.href}
                 className="relative flex flex-col justify-end"
-                style={{ width: `${100 / slides.length}%`, minHeight: '60vh' }}
+                style={{ width: `${100 / slides.length}%`, minHeight: 'clamp(480px, 60vh, 88vh)' }}
               >
                 {/* color overlay only — bg image is shared on the section */}
                 <div className="absolute inset-0" style={{ background: slide.bg }} />
