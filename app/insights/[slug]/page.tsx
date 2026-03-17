@@ -176,7 +176,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             <div className="absolute top-0 right-10 w-72 h-72 rounded-full bg-brand-400 blur-3xl" />
             <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full bg-brand-800 blur-3xl" />
           </div>
-          <div className="max-w-3xl mx-auto relative">
+          <div className="max-w-7xl mx-auto relative">
             <Link
               href="/insights"
               className="inline-flex items-center gap-2 text-blue-200 hover:text-white text-sm mb-8 transition-colors"
