@@ -213,7 +213,7 @@ export default function ApplicationServicesPage() {
         <div className="section-divider" />
 
         {/* ── Platforms ─────────────────────────────────── */}
-        <section className="py-24 px-6 bg-brand-950 relative overflow-hidden">
+        <section id="platforms" className="py-24 px-6 bg-brand-950 relative overflow-hidden">
           <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-brand-700 opacity-15 blur-3xl pointer-events-none" />
           <div className="max-w-7xl mx-auto relative">
             <div className="text-center max-w-2xl mx-auto mb-14">

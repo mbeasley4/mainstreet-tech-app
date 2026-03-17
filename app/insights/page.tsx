@@ -31,11 +31,6 @@ interface Category {
   slug: { current: string };
 }
 
-interface Tag {
-  _id: string;
-  title: string;
-  slug: { current: string };
-}
 
 interface Post {
   _id: string;
@@ -51,9 +46,6 @@ async function getCategories(): Promise<Category[]> {
   return client.fetch(`*[_type == "category"] | order(title asc) { _id, title, slug }`);
 }
 
-async function getTags(): Promise<Tag[]> {
-  return client.fetch(`*[_type == "tag"] | order(title asc) { _id, title, slug }`);
-}
 
 async function getPosts(page: number, categorySlug?: string, tagSlug?: string) {
   const start = (page - 1) * POSTS_PER_PAGE;
@@ -105,10 +97,9 @@ export default async function InsightsPage({
   const categorySlug = params.category ?? undefined;
   const tagSlug = params.tag ?? undefined;
 
-  const [{ posts, total }, categories, tags] = await Promise.all([
+  const [{ posts, total }, categories] = await Promise.all([
     getPosts(page, categorySlug, tagSlug),
     getCategories(),
-    getTags(),
   ]);
 
   const totalPages = Math.ceil(total / POSTS_PER_PAGE);
@@ -151,7 +142,7 @@ export default async function InsightsPage({
         </section>
 
         {/* ── Filters ───────────────────────────────────── */}
-        {(categories.length > 0 || tags.length > 0) && (
+        {categories.length > 0 && (
           <div className="bg-white border-b border-slate-100 z-40">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center gap-2">
               <Link
@@ -175,22 +166,6 @@ export default async function InsightsPage({
                   }`}
                 >
                   {cat.title}
-                </Link>
-              ))}
-              {tags.length > 0 && categories.length > 0 && (
-                <span className="w-px h-5 bg-slate-200 mx-1" aria-hidden />
-              )}
-              {tags.map((tag) => (
-                <Link
-                  key={tag._id}
-                  href={tagHref(tag.slug.current)}
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                    tagSlug === tag.slug.current
-                      ? 'bg-brand-600 text-white'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                  }`}
-                >
-                  {tag.title}
                 </Link>
               ))}
             </div>

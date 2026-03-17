@@ -115,18 +115,19 @@ body {
 .mega-panel {
   position: absolute;
   top: 100%;
-  left: 50%;
-  margin-top: 10px;
+  right: -20px;
+  left: auto;
+  padding-top: 12px; /* invisible bridge — prevents hover gap from closing panel */
   z-index: 50;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-50%) translateY(6px);
+  transform: translateY(6px);
   transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
 }
 .mega-panel.open {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 .mega-chevron {
   transition: transform 0.18s ease;

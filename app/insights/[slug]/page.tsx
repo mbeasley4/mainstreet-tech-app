@@ -18,7 +18,7 @@ interface Post {
   mainImage?: { asset: { _ref: string }; hotspot?: { x: number; y: number } };
   author?: { name: string; image?: { asset: { _ref: string } } };
   categories?: { _id: string; title: string; slug: { current: string } }[];
-  tags?: { _id: string; title: string; slug: { current: string } }[];
+  tags?: { _id: string; title: string; slug?: { current: string } }[];
   body?: unknown[];
 }
 
@@ -27,7 +27,7 @@ async function getPost(slug: string): Promise<Post | null> {
     `*[_type == "post" && slug.current == $slug][0] {
       _id, title, slug, publishedAt, readingTime, excerpt, mainImage,
       "categories": categories[defined(@->)]->{ _id, title, slug }[defined(slug.current)],
-      "tags": tags[defined(@->)]->{ _id, title, slug }[defined(slug.current)], body,
+      "tags": tags[defined(@->)]->{ _id, title, slug }, body,
       author->{ name, image }
     }`,
     { slug }
@@ -268,14 +268,13 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <div className="mt-14 pt-10 border-t border-slate-100">
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Tagged</p>
                 <div className="flex flex-wrap gap-2">
-                  {post.tags.filter((tag) => tag?.slug?.current).map((tag) => (
-                    <Link
+                  {post.tags.filter(Boolean).map((tag) => (
+                    <span
                       key={tag._id}
-                      href={`/insights?tag=${tag.slug.current}`}
-                      className="px-4 py-1.5 rounded-full bg-brand-600 text-white text-xs font-semibold tracking-wide shadow-sm shadow-brand-600/30 hover:bg-brand-700 transition-colors"
+                      className="px-4 py-1.5 rounded-full bg-brand-600 text-white text-xs font-semibold tracking-wide shadow-sm shadow-brand-600/30"
                     >
                       {tag.title}
-                    </Link>
+                    </span>
                   ))}
                 </div>
               </div>
