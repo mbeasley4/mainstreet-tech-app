@@ -205,11 +205,11 @@ export default function Header() {
 
         {/* Mobile Hamburger */}
         <button
-          className="lg:hidden ml-auto p-2.5 rounded-xl border-2 border-brand-600 bg-brand-600 hover:bg-brand-700 hover:border-brand-700 text-white shadow-md transition-colors"
+          className="lg:hidden ml-auto p-3 rounded-xl border-2 border-brand-600 bg-brand-600 hover:bg-brand-700 hover:border-brand-700 text-white shadow-lg shadow-brand-600/40 ring-2 ring-brand-300/60 ring-offset-1 transition-all active:scale-95"
           aria-label="Toggle menu"
           onClick={() => setMobileOpen((v) => !v)}
         >
-          <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+          <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>

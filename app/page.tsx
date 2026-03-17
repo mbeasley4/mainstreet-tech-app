@@ -18,10 +18,12 @@ export const metadata: Metadata = {
   },
 };
 import Hero from './components/Hero';
+import Intro from './components/Intro';
 import Services from './components/Services';
 import WhyUs from './components/WhyUs';
 import Process from './components/Process';
 import Testimonials from './components/Testimonials';
+import LatestBlog from './components/LatestBlog';
 import CTABanner from './components/CTABanner';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -32,10 +34,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Intro />
         <Services />
         <WhyUs />
         <Process />
         <Testimonials />
+        <LatestBlog />
         <CTABanner />
       </main>
       <Footer />
