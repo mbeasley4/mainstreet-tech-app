@@ -259,17 +259,47 @@ export default function Header() {
                 </svg>
               </button>
               {mobileServices && (
-                <div className="pb-4 pl-2 space-y-1">
+                <div className="pb-4 space-y-2">
                   {[
-                    { label: 'Database Services', href: '/services/database/' },
-                    { label: 'Enterprise Applications', href: '/services/applications/' },
-                    { label: 'Data & Analytics', href: '/services/data-analytics/' },
-                    { label: 'Hosting', href: '/services/hosting/' },
-                    { label: 'IT Advisory', href: '/services/advisory/' },
-                  ].map(({ label, href }) => (
-                    <a key={label} href={href} className="flex items-center gap-3 py-2 text-base text-slate-500 hover:text-brand-600 transition-colors" onClick={() => setMobileOpen(false)}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0" />
-                      {label}
+                    {
+                      href: '/services/database/',
+                      label: 'Database Services',
+                      desc: 'Remote DBA · Monitoring · Tuning · Upgrades',
+                      icon: <><ellipse cx="12" cy="5" rx="9" ry="3" /><path strokeLinecap="round" strokeLinejoin="round" d="M3 5v4c0 1.657 4.03 3 9 3s9-1.343 9-3V5M3 9v4c0 1.657 4.03 3 9 3s9-1.343 9-3V9M3 13v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4" /></>,
+                    },
+                    {
+                      href: '/services/applications/',
+                      label: 'Enterprise Applications',
+                      desc: 'JD Edwards · PeopleSoft · Cloud Strategy',
+                      icon: <><rect x="2" y="3" width="20" height="14" rx="2" ry="2" /><path strokeLinecap="round" strokeLinejoin="round" d="M8 21h8M12 17v4" /></>,
+                    },
+                    {
+                      href: '/services/data-analytics/',
+                      label: 'Data & Analytics',
+                      desc: 'Governance · Visualization · Architecture',
+                      icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />,
+                    },
+                    {
+                      href: '/services/hosting/',
+                      label: 'Hosting',
+                      desc: 'IaaS · Disaster Recovery · Hybrid Cloud',
+                      icon: <><rect x="2" y="2" width="20" height="8" rx="2" ry="2" /><rect x="2" y="14" width="20" height="8" rx="2" ry="2" /><line x1="6" y1="6" x2="6.01" y2="6" /><line x1="6" y1="18" x2="6.01" y2="18" /></>,
+                    },
+                    {
+                      href: '/services/advisory/',
+                      label: 'IT Advisory',
+                      desc: 'Fractional CIO · Digital Transformation',
+                      icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />,
+                    },
+                  ].map(({ href, label, desc, icon }) => (
+                    <a key={label} href={href} className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group" onClick={() => setMobileOpen(false)}>
+                      <div className="w-9 h-9 rounded-lg bg-white group-hover:bg-brand-100 border border-slate-200 group-hover:border-brand-200 flex items-center justify-center shrink-0 transition-colors shadow-sm">
+                        <svg className="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">{icon}</svg>
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-800 group-hover:text-brand-700 leading-snug transition-colors">{label}</p>
+                        <p className="text-xs text-slate-400 mt-0.5">{desc}</p>
+                      </div>
                     </a>
                   ))}
                 </div>
@@ -288,16 +318,40 @@ export default function Header() {
                 </svg>
               </button>
               {mobileTech && (
-                <div className="pb-4 pl-2 space-y-4">
+                <div className="pb-4 space-y-3">
                   {[
-                    { heading: 'Databases', items: 'MySQL · SQL Server · PostgreSQL · DB2 · Oracle · Aurora · MariaDB · MongoDB · Redshift · Snowflake' },
-                    { heading: 'App Platforms', items: 'JD Edwards · PeopleSoft · Nextworld · E-Business Suite' },
-                    { heading: 'Cloud', items: 'AWS · Azure · GCP · OCI' },
-                    { heading: 'BI & Low-Code', items: 'Power BI · Tableau · Power Apps · Boomi' },
-                  ].map(({ heading, items }) => (
-                    <div key={heading}>
-                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5">{heading}</p>
-                      <p className="text-base text-slate-500 leading-relaxed">{items}</p>
+                    {
+                      heading: 'Databases',
+                      url: '/services/database/#platforms',
+                      items: ['MySQL', 'SQL Server', 'PostgreSQL', 'DB2', 'Oracle', 'Amazon Aurora', 'MariaDB', 'MongoDB', 'Redshift', 'Snowflake'],
+                    },
+                    {
+                      heading: 'App Platforms',
+                      url: '/services/applications/#platforms',
+                      items: ['Oracle Platforms', 'JD Edwards', 'PeopleSoft', 'Nextworld', 'E-Business Suite'],
+                    },
+                    {
+                      heading: 'Cloud',
+                      url: '/services/hosting/#platforms',
+                      items: ['Amazon AWS', 'Microsoft Azure', 'Google Cloud (GCP)', 'Oracle Cloud (OCI)'],
+                    },
+                    {
+                      heading: 'BI & Low-Code',
+                      url: '/services/data-analytics/#platforms',
+                      items: ['Power BI', 'Tableau', 'Power Apps', 'Power Automate', 'Boomi'],
+                    },
+                  ].map(({ heading, url, items }) => (
+                    <div key={heading} className="rounded-xl bg-slate-50 px-3 py-2.5">
+                      <a href={url} className="text-[10px] font-bold text-brand-600 uppercase tracking-widest mb-2 block hover:text-brand-800 transition-colors" onClick={() => setMobileOpen(false)}>
+                        {heading}
+                      </a>
+                      <div className="flex flex-wrap gap-1.5">
+                        {items.map((item) => (
+                          <a key={item} href={url} className="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-xs font-medium text-slate-600 hover:border-brand-400 hover:text-brand-600 hover:bg-brand-50 transition-all shadow-sm" onClick={() => setMobileOpen(false)}>
+                            {item}
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -310,21 +364,14 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Drawer footer CTAs */}
-        <div className="px-6 py-5 border-t border-slate-100 shrink-0 space-y-3">
+        {/* Drawer footer CTA */}
+        <div className="px-6 py-5 border-t border-slate-100 shrink-0">
           <a
             href="/contact/"
             className="block bg-brand-600 hover:bg-brand-700 text-white text-center py-3.5 rounded-xl font-semibold text-base transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Get Started
-          </a>
-          <a
-            href="/contact/"
-            className="block border border-brand-600 text-brand-600 hover:bg-brand-50 text-center py-3.5 rounded-xl font-semibold text-base transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Get in Touch
           </a>
         </div>
       </div>
