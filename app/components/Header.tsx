@@ -56,11 +56,11 @@ export default function Header() {
 
       {/* Main nav */}
       <div className="bg-white/95 backdrop-blur-md border-b border-slate-200">
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-8">
+      <nav className="max-w-7xl mx-auto px-6 py-2 md:py-4 flex items-center gap-8">
 
         {/* Logo */}
         <a href="/" className="flex items-center group">
-          <Logo variant="light" className="h-12 md:h-16 w-auto" />
+          <Logo variant="light" className="h-14 md:h-16 w-auto" />
         </a>
 
         {/* Desktop Links */}

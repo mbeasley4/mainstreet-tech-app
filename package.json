@@ -9,7 +9,8 @@
     "lint": "eslint",
     "patch-images": "node scripts/patch-post-images.js",
     "associate-tags": "node scripts/associate-body-tags.js",
-    "audit-tags": "node scripts/audit-and-fix-tags.js"
+    "audit-tags": "node scripts/audit-and-fix-tags.js",
+    "reupload-body-images": "node scripts/reupload-body-images.js"
   },
   "dependencies": {
     "@sanity/client": "^7.17.0",

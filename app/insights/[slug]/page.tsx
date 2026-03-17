@@ -88,12 +88,11 @@ const ptComponents: Parameters<typeof PortableText>[0]['components'] = {
       return (
         <figure className="float-right ml-8 mb-6 w-1/2 clear-right">
           <div className="rounded-xl overflow-hidden shadow-md ring-1 ring-slate-900/10">
-            <Image
-              src={urlFor(value).width(500).fit('max').url()}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={urlFor(value).width(800).url()}
               alt={value.alt ?? ''}
-              width={500}
-              height={350}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto"
             />
           </div>
           {value.caption && (
