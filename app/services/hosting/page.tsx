@@ -159,7 +159,7 @@ export default function HostingServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="/#contact"
+                href="/contact"
                 className="inline-flex items-center gap-2 bg-white text-brand-700 font-bold px-8 py-3.5 rounded-xl hover:bg-brand-50 transition-colors text-sm shadow-lg"
               >
                 Talk to an Engineer
@@ -277,7 +277,7 @@ export default function HostingServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-white text-brand-700 font-bold px-10 py-4 rounded-xl hover:bg-brand-50 transition-colors text-base shadow-xl"
               >
                 Get in Touch

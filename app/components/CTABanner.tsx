@@ -7,7 +7,7 @@ export default function CTABanner() {
           Whether you&apos;re modernizing a legacy system, scaling your data infrastructure, or need a strategic IT roadmap — we&apos;re ready to help.
         </p>
         <a
-          href="#contact"
+          href="/contact"
           className="inline-flex items-center bg-white text-brand-700 font-bold px-10 py-4 rounded-xl hover:bg-brand-50 transition-colors text-base shadow-xl"
         >
           Get in Touch
