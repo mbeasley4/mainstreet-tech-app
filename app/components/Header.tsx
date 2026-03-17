@@ -104,12 +104,6 @@ export default function Header() {
                       desc: 'Governance · Visualization · Architecture',
                     },
                     {
-                      url: '/services/artificial-intelligence/',
-                      icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" />,
-                      label: 'Artificial Intelligence',
-                      desc: 'Machine Learning · Low/No Code Solutions',
-                    },
-                    {
                       url: '/services/hosting/',
                       icon: <><rect x="2" y="2" width="20" height="8" rx="2" ry="2" /><rect x="2" y="14" width="20" height="8" rx="2" ry="2" /><line x1="6" y1="6" x2="6.01" y2="6" /><line x1="6" y1="18" x2="6.01" y2="18" /></>,
                       label: 'Hosting',
@@ -270,7 +264,6 @@ export default function Header() {
                     { label: 'Database Services', href: '/services/database/' },
                     { label: 'Enterprise Applications', href: '/services/applications/' },
                     { label: 'Data & Analytics', href: '/services/data-analytics/' },
-                    { label: 'Artificial Intelligence', href: '/services/artificial-intelligence/' },
                     { label: 'Hosting', href: '/services/hosting/' },
                     { label: 'IT Advisory', href: '/services/advisory/' },
                   ].map(({ label, href }) => (

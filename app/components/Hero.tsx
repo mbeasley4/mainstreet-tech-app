@@ -78,12 +78,9 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 mb-16">
           <a
             href="#contact"
-            className="hero-btn inline-flex items-center justify-center gap-2 bg-white text-brand-900 font-semibold px-9 py-4 rounded-lg text-base shadow-lg transition-colors hover:bg-blue-50"
+            className="hero-btn inline-flex items-center justify-center bg-white text-brand-900 font-semibold px-9 py-4 rounded-lg text-base shadow-lg transition-colors hover:bg-blue-50"
           >
             Let&apos;s Talk
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
           </a>
           <a
             href="#services"

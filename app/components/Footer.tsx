@@ -4,17 +4,14 @@ const services = [
   { href: '/services', label: 'Database Services' },
   { href: '/services', label: 'Enterprise Applications' },
   { href: '/services', label: 'Data & Analytics' },
-  { href: '/services', label: 'Artificial Intelligence' },
   { href: '/services', label: 'Hosting' },
   { href: '/#services', label: 'IT Advisory' },
 ];
 
 const company = [
   { href: '/about', label: 'About Us' },
-  { href: '/#process', label: 'Our Process' },
-  { href: '/#testimonials', label: 'Testimonials' },
-  { href: '#', label: 'Insights' },
-  { href: '#', label: 'Careers' },
+  { href: '/insights', label: 'Insights' },
+  { href: '/careers', label: 'Careers' },
 ];
 
 export default function Footer() {
@@ -34,7 +31,7 @@ export default function Footer() {
           </p>
           {/* Client Login CTA */}
           <a
-            href="#"
+            href="https://mainstreet.halopsa.com/portal/home" target="_blank"
             className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -103,12 +100,9 @@ export default function Footer() {
           <div className="mt-6">
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 border border-slate-700 hover:border-brand-500 text-slate-300 hover:text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-colors"
+              className="inline-flex items-center border border-slate-700 hover:border-brand-500 text-slate-300 hover:text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-colors"
             >
               Get in Touch
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
             </a>
           </div>
         </div>

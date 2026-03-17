@@ -9,6 +9,7 @@ const services = [
     title: 'Database Management',
     description:
       'Design, optimize, and maintain the databases your operations depend on. We handle performance tuning, migrations, security hardening, and disaster recovery across SQL and NoSQL platforms.',
+    href: '/services#database-management',
   },
   {
     icon: (
@@ -20,6 +21,7 @@ const services = [
     title: 'Enterprise Applications',
     description:
       'Implement, integrate, and support the enterprise software your teams rely on. From ERP and CRM rollouts to custom integrations, we bridge the gap between platforms and processes.',
+    href: '/services#enterprise-applications',
   },
   {
     icon: (
@@ -28,6 +30,7 @@ const services = [
     title: 'Data & Analytics',
     description:
       'Turn raw data into decisions. We build data pipelines, dashboards, and reporting infrastructure that give your leadership team clear, actionable visibility into what matters most.',
+    href: '/services#data-analytics',
   },
   {
     icon: (
@@ -36,6 +39,7 @@ const services = [
     title: 'IT Advisory',
     description:
       'Strategic guidance from experienced practitioners. We assess your current environment, identify gaps, and deliver a clear technology roadmap aligned to your business goals and budget.',
+    href: '/services#it-advisory',
   },
   {
     icon: (
@@ -44,54 +48,43 @@ const services = [
     title: 'Hosting',
     description:
       'Reliable, managed hosting for applications, databases, and websites. We handle the infrastructure — uptime monitoring, security patching, backups, and scaling — so your team doesn\'t have to.',
+    href: '/services#hosting',
   },
 ];
 
-function ServiceCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+function ServiceCard({ icon, title, description, href }: { icon: React.ReactNode; title: string; description: string; href: string }) {
   return (
-    <div className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 card-hover">
-      <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
-        <svg className="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-          {icon}
-        </svg>
+    <div className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 border-l-4 border-l-brand-500 card-hover flex flex-col">
+      <div className="flex items-center gap-3 mb-3">
+        <div className="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center shrink-0">
+          <svg className="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            {icon}
+          </svg>
+        </div>
+        <h3 className="text-lg font-bold text-slate-900">{title}</h3>
       </div>
-      <h3 className="text-xl font-bold text-slate-900 mb-2">{title}</h3>
-      <p className="text-slate-500 leading-relaxed">{description}</p>
-      <a href="/services" className="inline-flex items-center gap-1 text-brand-600 font-semibold text-sm mt-5 hover:text-brand-700 transition-colors">
-        Learn more{' '}
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
+      <p className="text-slate-600 leading-relaxed text-sm flex-1">{description}</p>
+      <a href={href} className="inline-flex items-center text-brand-600 font-semibold text-sm mt-5 hover:text-brand-700 transition-all">
+        Learn more
       </a>
     </div>
   );
 }
 
 export default function Services() {
-  const topRow = services.slice(0, 3);
-  const bottomRow = services.slice(3);
-
   return (
     <section id="services" className="py-16 md:py-24 px-4 sm:px-6 bg-slate-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-brand-600 font-semibold text-sm uppercase tracking-wider">What We Do</span>
           <h2 className="text-4xl font-bold text-slate-900 mt-2 mb-4">Enterprise services. Practical delivery.</h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
             From managing mission-critical databases to advising on technology strategy, we bring enterprise-grade expertise to every engagement.
           </p>
         </div>
 
-        {/* 3-column top row */}
-        <div className="grid md:grid-cols-3 gap-6 mb-6">
-          {topRow.map((s) => (
-            <ServiceCard key={s.title} {...s} />
-          ))}
-        </div>
-
-        {/* 2-column bottom row, centered */}
-        <div className="grid md:grid-cols-2 gap-6 md:max-w-2xl lg:max-w-3xl mx-auto">
-          {bottomRow.map((s) => (
+        <div className="grid sm:grid-cols-2 gap-6">
+          {services.map((s) => (
             <ServiceCard key={s.title} {...s} />
           ))}
         </div>
