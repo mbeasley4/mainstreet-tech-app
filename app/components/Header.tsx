@@ -59,7 +59,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-8">
 
         {/* Logo */}
-        <a href="#top" className="flex items-center group">
+        <a href="/" className="flex items-center group">
           <Logo variant="light" className="h-12 md:h-16 w-auto" />
         </a>
 
