@@ -131,9 +131,9 @@ export default function Hero() {
   return (
     <section
       className="relative"
-      style={{ minHeight: '88vh' }}
-      onMouseEnter={() => setPlaying(false)}
-      onMouseLeave={() => setPlaying(true)}
+      style={{ minHeight: 'clamp(480px, 60vh, 88vh)' }}
+      onPointerEnter={(e) => { if (e.pointerType !== 'touch') setPlaying(false); }}
+      onPointerLeave={(e) => { if (e.pointerType !== 'touch') setPlaying(true); }}
     >
 
       {/* ── Single shared background image ───────────────────── */}
@@ -267,13 +267,13 @@ export default function Hero() {
       </div>
 
       {/* ── MOBILE: single-slide carousel ───────────────────── */}
-      <div className="lg:hidden flex flex-col relative z-10" style={{ minHeight: '88vh' }}>
+      <div className="lg:hidden flex flex-col relative z-10" style={{ minHeight: '60vh' }}>
         {/* slide track */}
         <div className="relative flex-1 overflow-hidden">
           <div
             className="flex h-full"
             style={{
-              transform: `translateX(-${active * 100}%)`,
+              transform: `translateX(-${active * (100 / slides.length)}%)`,
               transition: 'transform 0.5s cubic-bezier(0.4,0,0.2,1)',
               width: `${slides.length * 100}%`,
             }}
@@ -282,7 +282,7 @@ export default function Hero() {
               <div
                 key={slide.href}
                 className="relative flex flex-col justify-end"
-                style={{ width: `${100 / slides.length}%`, minHeight: '88vh' }}
+                style={{ width: `${100 / slides.length}%`, minHeight: '60vh' }}
               >
                 {/* color overlay only — bg image is shared on the section */}
                 <div className="absolute inset-0" style={{ background: slide.bg }} />
@@ -291,21 +291,21 @@ export default function Hero() {
                 <div className="absolute top-0 left-0 right-0 h-1 z-10" style={{ background: slide.accent }} />
 
                 {/* content */}
-                <div className="relative z-10 px-8 pb-24 pt-20">
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ color: slide.accent }}>
+                <div className="relative z-10 px-6 pb-16 pt-14">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: slide.accent }}>
                     {slide.name}
                   </p>
-                  <div style={{ color: slide.accent }} className="mb-5">{slide.icon}</div>
+                  <div style={{ color: slide.accent }} className="mb-4">{slide.icon}</div>
                   <h2
-                    className="font-extrabold text-white leading-none mb-4"
-                    style={{ fontSize: 'clamp(2.2rem, 10vw, 3.5rem)', letterSpacing: '-0.03em' }}
+                    className="font-extrabold text-white leading-none mb-3"
+                    style={{ fontSize: 'clamp(1.8rem, 8vw, 2.8rem)', letterSpacing: '-0.03em' }}
                   >
                     {slide.headline.split('\n').map((line, li) => (
                       <span key={li} style={{ display: 'block' }}>{line}</span>
                     ))}
                   </h2>
-                  <div className="w-10 h-0.5 rounded-full mb-5" style={{ background: slide.accent }} />
-                  <p className="text-blue-100/80 leading-relaxed mb-8" style={{ fontSize: '0.9rem' }}>
+                  <div className="w-10 h-0.5 rounded-full mb-4" style={{ background: slide.accent }} />
+                  <p className="text-blue-100/80 leading-relaxed mb-6" style={{ fontSize: '0.875rem' }}>
                     {slide.sub}
                   </p>
                   <a
@@ -319,30 +319,10 @@ export default function Hero() {
               </div>
             ))}
           </div>
-
-          {/* prev / next arrows */}
-          <button
-            onClick={() => manualNav(prev)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors backdrop-blur-sm"
-            aria-label="Previous slide"
-          >
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4" aria-hidden="true">
-              <path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" />
-            </svg>
-          </button>
-          <button
-            onClick={() => manualNav(next)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors backdrop-blur-sm"
-            aria-label="Next slide"
-          >
-            <ArrowRight className="w-4 h-4" />
-          </button>
         </div>
 
-        {/* bottom controls: dots + play/pause */}
-        <div
-          className="absolute bottom-6 left-0 right-0 z-20 flex items-center justify-center gap-4 lg:hidden"
-        >
+        {/* bottom controls: dots (left) + arrows + play/pause (right) */}
+        <div className="absolute bottom-5 left-0 right-0 z-20 flex items-center justify-between px-5 lg:hidden">
           {/* dot indicators */}
           <div className="flex items-center gap-2">
             {slides.map((_, i) => (
@@ -361,22 +341,40 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* play / pause */}
-          <button
-            onClick={() => setPlaying((p) => !p)}
-            className="w-8 h-8 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors backdrop-blur-sm"
-            aria-label={playing ? 'Pause slideshow' : 'Play slideshow'}
-          >
-            {playing ? (
-              <svg viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
-                <path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z" />
+          {/* arrows + play/pause grouped right */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => manualNav(prev)}
+              className="w-9 h-9 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors backdrop-blur-sm"
+              aria-label="Previous slide"
+            >
+              <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4" aria-hidden="true">
+                <path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" />
               </svg>
-            ) : (
-              <svg viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
-                <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-              </svg>
-            )}
-          </button>
+            </button>
+            <button
+              onClick={() => manualNav(next)}
+              className="w-9 h-9 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors backdrop-blur-sm"
+              aria-label="Next slide"
+            >
+              <ArrowRight className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => setPlaying((p) => !p)}
+              className="w-9 h-9 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors backdrop-blur-sm"
+              aria-label={playing ? 'Pause slideshow' : 'Play slideshow'}
+            >
+              {playing ? (
+                <svg viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
+                  <path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
+                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
