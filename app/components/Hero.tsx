@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
+import Image from 'next/image';
 
 /* ── Service panel data ─────────────────────────────────────── */
 const slides = [
@@ -137,11 +138,15 @@ export default function Hero() {
     >
 
       {/* ── Single shared background image ───────────────────── */}
-      <img
+      <Image
         src="/images/homepage-hero-bg.png"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-center z-0"
+        fill
+        priority
+        quality={75}
+        sizes="100vw"
+        className="object-cover object-center z-0"
       />
 
       {/* ── DESKTOP: 5 panels side by side ──────────────────── */}
