@@ -159,7 +159,14 @@ export default function Hero() {
               onMouseEnter={() => goTo(i)}
             >
               {/* color overlay */}
-              <div className="absolute inset-0" style={{ background: slide.bg }} />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: slide.bg,
+                  opacity: isActive ? 1 : 0.70,
+                  transition: 'opacity 0.6s cubic-bezier(0.4,0,0.2,1)',
+                }}
+              />
 
               {/* active indicator bar at top */}
               <div
@@ -267,7 +274,7 @@ export default function Hero() {
       </div>
 
       {/* ── MOBILE: single-slide carousel ───────────────────── */}
-      <div className="lg:hidden flex flex-col relative z-10" style={{ minHeight: 'clamp(480px, 60vh, 88vh)' }}>
+      <div className="lg:hidden flex flex-col relative z-10" style={{ minHeight: '580px' }}>
         {/* slide track */}
         <div className="relative flex-1 overflow-hidden">
           <div
@@ -282,7 +289,7 @@ export default function Hero() {
               <div
                 key={slide.href}
                 className="relative flex flex-col justify-end"
-                style={{ width: `${100 / slides.length}%`, minHeight: 'clamp(480px, 60vh, 88vh)' }}
+                style={{ width: `${100 / slides.length}%`, minHeight: '580px' }}
               >
                 {/* color overlay only — bg image is shared on the section */}
                 <div className="absolute inset-0" style={{ background: slide.bg }} />

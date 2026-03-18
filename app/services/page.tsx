@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PageHero from '../components/PageHero';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -98,25 +99,16 @@ export default function ServicesPage() {
       <main>
 
         {/* ── Page Hero ─────────────────────────────────── */}
-        <section className="hero-gradient pt-36 pb-16 px-6 text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-10 w-72 h-72 rounded-full bg-brand-400 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full bg-brand-800 blur-3xl" />
-          </div>
-          <div className="max-w-7xl mx-auto relative">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs font-medium mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              Our Services
-            </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-3">
-              Enterprise services.<br />
-              <span className="text-brand-300">Practical delivery.</span>
-            </h1>
-            <p className="text-blue-100 leading-relaxed max-w-2xl">
-              From database reliability to strategic IT planning, we cover the full technology stack that enterprise operations depend on — with senior practitioners at every level.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          serviceName="Our Services"
+          headline="Enterprise services."
+          headlineAccent="Practical delivery."
+          description="From database reliability to strategic IT planning, we cover the full technology stack that enterprise operations depend on — with senior practitioners at every level."
+          backgroundImage="/images/page-hero-backgrounds/services-bg.png"
+          showBreadcrumb={false}
+          primaryButton={{ label: 'Talk to an Expert', href: '/contact' }}
+          secondaryButton={{ label: 'About Our Team', href: '/about' }}
+        />
 
         {/* ── Divider ───────────────────────────────────── */}
         <div className="section-divider" />

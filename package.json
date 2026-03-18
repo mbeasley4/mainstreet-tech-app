@@ -13,8 +13,8 @@
     "reupload-body-images": "node scripts/reupload-body-images.js"
   },
   "dependencies": {
-    "@sanity/client": "^7.17.0",
     "@portabletext/react": "^3.2.0",
+    "@sanity/client": "^7.17.0",
     "@sanity/image-url": "^2.0.3",
     "@sanity/vision": "^4.22.0",
     "axios": "^1.13.6",
@@ -25,6 +25,7 @@
     "playwright": "^1.58.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "resend": "^6.9.4",
     "sanity": "^5.16.0",
     "slugify": "^1.6.8",
     "styled-components": "^6.3.11"

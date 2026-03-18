@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PageHero from '../components/PageHero';
 import type { Metadata } from 'next';
 import { client } from '../../sanity/lib/client';
 import { urlFor } from '../../sanity/lib/image';
@@ -121,25 +122,16 @@ export default async function InsightsPage({
       <Header />
       <main>
         {/* ── Page Hero ─────────────────────────────────── */}
-        <section className="hero-gradient pt-28 md:pt-36 pb-12 md:pb-16 px-4 sm:px-6 text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-10 w-72 h-72 rounded-full bg-brand-400 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full bg-brand-800 blur-3xl" />
-          </div>
-          <div className="max-w-7xl mx-auto relative">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs font-medium mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              From the Team
-            </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-3">
-              Insights &amp; Perspectives
-            </h1>
-            <p className="text-blue-100 leading-relaxed max-w-2xl">
-              Expert commentary on data management, enterprise technology, and the trends shaping how
-              organizations operate.
-            </p>
-          </div>
-        </section>
+        <PageHero 
+          serviceName="From the Team"
+          headline="Insights "
+          headlineAccent="&amp; Perspectives"
+          description=" Expert commentary on data management, enterprise technology, and the trends shaping how organizations operate."
+          backgroundImage="/images/page-hero-backgrounds/about-bg.png"
+          showBreadcrumb={false}
+          primaryButton={{ label: 'Talk to an Expert', href: '/contact' }}
+          secondaryButton={{ label: 'Services We Offer', href: '/services' }}
+        />
 
         {/* ── Filters ───────────────────────────────────── */}
         {categories.length > 0 && (

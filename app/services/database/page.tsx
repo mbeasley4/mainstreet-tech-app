@@ -1,5 +1,6 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import PageHero from '../../components/PageHero';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -130,45 +131,14 @@ export default function DatabaseServicesPage() {
       <main>
 
         {/* ── Page Hero ─────────────────────────────────── */}
-        <section className="hero-gradient pt-36 pb-16 px-6 text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-10 w-72 h-72 rounded-full bg-brand-400 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full bg-brand-800 blur-3xl" />
-          </div>
-          <div className="max-w-7xl mx-auto relative">
-            <div className="flex items-center gap-2 mb-4">
-              <a href="/services" className="text-blue-200 hover:text-white text-sm transition-colors">Services</a>
-              <span className="text-white/30 text-sm">/</span>
-              <span className="text-sm text-white/70">Database Services</span>
-            </div>
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs font-medium mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              Database Services
-            </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-3">
-              Always-on support for<br />
-              <span className="text-brand-300">your most critical data.</span>
-            </h1>
-            <p className="text-blue-100 leading-relaxed max-w-2xl mb-8">
-              Your databases are the foundation everything else runs on. Our senior DBAs monitor, maintain, tune, and evolve your database environment — so your team can focus on the business.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-brand-700 font-bold px-8 py-3.5 rounded-xl hover:bg-brand-50 transition-colors text-sm shadow-lg"
-              >
-                Talk to a DBA
-                <ArrowIcon className="w-4 h-4" />
-              </a>
-              <a
-                href="/services"
-                className="inline-flex items-center gap-2 border border-white/30 text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-white/10 transition-colors text-sm"
-              >
-                All Services
-              </a>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          serviceName="Database Services"
+          headline="Always-on support for"
+          headlineAccent="your most critical data."
+          description="Your databases are the foundation everything else runs on. Our senior DBAs monitor, maintain, tune, and evolve your database environment — so your team can focus on the business."
+          primaryButton={{ label: 'Talk to a DBA', href: '/contact' }}
+          backgroundImage="/images/page-hero-backgrounds/data-bg.png"
+        />
 
         {/* ── Divider ───────────────────────────────────── */}
         <div className="section-divider" />

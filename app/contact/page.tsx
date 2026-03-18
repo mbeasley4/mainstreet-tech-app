@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContactForm from './ContactForm';
+import PageHero from '../components/PageHero';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -25,27 +26,15 @@ export default function ContactPage() {
     <>
       <Header />
       <main>
-
         {/* ── Page Hero ─────────────────────────────────── */}
-        <section className="hero-gradient pt-36 pb-16 px-6 text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-10 w-72 h-72 rounded-full bg-brand-400 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full bg-brand-800 blur-3xl" />
-          </div>
-          <div className="max-w-7xl mx-auto relative">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs font-medium mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              We&apos;d love to hear from you
-            </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-              Let&apos;s talk about your business
-            </h1>
-            <p className="text-blue-100 leading-relaxed max-w-xl">
-              Whether you have a specific project in mind or just want to explore your options,
-              we&apos;re happy to have a no-pressure conversation.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          serviceName="We&apos;d love to hear from you"
+          headline="Let&apos;s talk about"
+          headlineAccent="your business"
+          description="Whether you have a specific project in mind or just want to explore your options, we&apos;re happy to have a no-pressure conversation."
+          backgroundImage="/images/page-hero-backgrounds/advisory-bg.png"
+          showBreadcrumb={false}
+        />
 
         {/* ── Contact Body ──────────────────────────────── */}
         <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">

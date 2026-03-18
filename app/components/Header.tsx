@@ -82,7 +82,7 @@ export default function Header() {
                 </a>
               </div>
               {/* Grid */}
-              <div className="flex-1 p-5">
+              <div className="flex-1 p-5 flex flex-col">
                 <div className="grid grid-cols-2 gap-2">
                   {[
                     {
@@ -126,6 +126,17 @@ export default function Header() {
                       </div>
                     </a>
                   ))}
+                </div>
+                <div className="mt-3 pt-3 border-t border-slate-100">
+                  <a href="/services/" className="flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors group">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                    </svg>
+                    View all services overview
+                    <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -260,6 +271,17 @@ export default function Header() {
               </button>
               {mobileServices && (
                 <div className="pb-4 space-y-2">
+                  <a href="/services/" className="flex items-center gap-3 p-3 rounded-xl bg-brand-50 hover:bg-brand-100 border border-brand-100 transition-all group" onClick={() => setMobileOpen(false)}>
+                    <div className="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center shrink-0 shadow-sm">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-brand-700 leading-snug">All Services — Overview</p>
+                      <p className="text-xs text-brand-500 mt-0.5">See everything we offer</p>
+                    </div>
+                  </a>
                   {[
                     {
                       href: '/services/database/',
