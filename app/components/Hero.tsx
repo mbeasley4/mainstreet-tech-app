@@ -293,17 +293,17 @@ export default function Hero() {
             {slides.map((slide) => (
               <div
                 key={slide.href}
-                className="relative flex flex-col justify-end"
+                className="relative flex flex-col justify-start"
                 style={{ width: `${100 / slides.length}%`, minHeight: '580px' }}
               >
                 {/* color overlay only — bg image is shared on the section */}
-                <div className="absolute inset-0" style={{ background: slide.bg }} />
+                <div className="absolute inset-0" style={{ background: slide.bg, opacity: 0.72 }} />
 
                 {/* top accent bar */}
                 <div className="absolute top-0 left-0 right-0 h-1 z-10" style={{ background: slide.accent }} />
 
                 {/* content */}
-                <div className="relative z-10 px-6 pb-16 pt-14">
+                <div className="relative z-10 px-6 pt-16 pb-6">
                   <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: slide.accent }}>
                     {slide.name}
                   </p>
