@@ -26,8 +26,8 @@ export default function PrivacyPolicyPage() {
       <Header />
       <main className="bg-white">
         {/* ── Page Header ─────────────────────────────── */}
-        <div className="hero-gradient text-white py-16 px-6">
-          <div className="max-w-4xl mx-auto">
+        <div className="hero-gradient text-white pt-32 pb-16 px-6">
+          <div className="max-w-7xl mx-auto">
             <p className="text-brand-200 text-sm font-semibold uppercase tracking-widest mb-2">Legal</p>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Privacy Policy</h1>
             <p className="text-brand-200 text-base">Last Updated: March 18, 2026</p>
