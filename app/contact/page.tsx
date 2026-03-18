@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       'Get in touch with the Main Street Tech team. Ready to help with database management, enterprise applications, data analytics, and more.',
     url: 'https://www.mainstreettech.com/contact',
+    images: [{ url: '/images/default-og.png' }],
   },
   twitter: {
     title: 'Contact Us | Main Street Tech',

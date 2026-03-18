@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       'Managed services, upgrades, cloud strategy, and system integrations for JD Edwards, PeopleSoft, Oracle E-Business Suite, and Nextworld.',
     url: 'https://www.mainstreettech.com/services/applications',
+    images: [{ url: '/images/default-og.png' }],
   },
   twitter: {
     title: 'Enterprise Application Services | Main Street Tech',

@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     description:
       'Technology insights, best practices, and expert perspectives from the Main Street Tech team.',
     url: 'https://www.mainstreettech.com/insights',
+    images: [{ url: '/images/default-og.png' }],
   },
   twitter: {
     title: 'Insights | Main Street Tech',

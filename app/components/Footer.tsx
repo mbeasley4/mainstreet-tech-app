@@ -113,8 +113,8 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
           <span>&copy; 2026 Main Street Tech. All rights reserved.</span>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-300 transition-colors">Terms of Service</a>
+            <a href="/privacy-policy/" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+            <a href="/terms-and-conditions" className="hover:text-slate-300 transition-colors">Terms & Conditions</a>
           </div>
         </div>
       </div>

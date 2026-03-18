@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       'Remote DBA support, health assessments, performance monitoring, query tuning, version upgrades, and database development across all major platforms — available 24×7.',
     url: 'https://www.mainstreettech.com/services/database',
+    images: [{ url: '/images/default-og.png' }],
   },
   twitter: {
     title: 'Database Services | Main Street Tech',

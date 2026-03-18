@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       'Join the Main Street Tech team. We\'re always looking for senior practitioners who want to do meaningful work with great clients.',
     url: 'https://www.mainstreettech.com/about/careers',
+    images: [{ url: '/images/default-og.png' }],
   },
   twitter: {
     title: 'Careers | Main Street Tech',

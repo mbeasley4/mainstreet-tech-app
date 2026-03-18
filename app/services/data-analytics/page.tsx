@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       'Data strategy, governance, warehousing, visualization, and integration — from raw architecture to Power BI and Tableau dashboards your team can act on.',
     url: 'https://www.mainstreettech.com/services/data-analytics',
+    images: [{ url: '/images/default-og.png' }],
   },
   twitter: {
     title: 'Data & Analytics Services | Main Street Tech',

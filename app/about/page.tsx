@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       'Main Street Tech is an enterprise technology firm built on a simple promise: senior experts, no handoffs, and technology decisions made in your best interest.',
     url: 'https://www.mainstreettech.com/about',
+    images: [{ url: '/images/default-og.png' }],
   },
   twitter: {
     title: 'About Us | Main Street Tech',

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       'From database management and enterprise applications to data analytics, hosting, and IT advisory — Main Street Tech delivers senior-level expertise across every layer of your technology stack.',
     url: 'https://www.mainstreettech.com/services',
+    images: [{ url: '/images/default-og.png' }],
   },
   twitter: {
     title: 'Services | Main Street Tech',

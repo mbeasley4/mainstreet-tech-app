@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       'Enterprise IT advisory services tailored to mid-to-large enterprises — from strategy and planning to fractional CIO, digital transformation, and staff augmentation.',
     url: 'https://www.mainstreettech.com/services/advisory',
+    images: [{ url: '/images/default-og.png' }],
   },
   twitter: {
     title: 'IT Advisory Services | Main Street Tech',
