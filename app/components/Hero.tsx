@@ -331,20 +331,25 @@ export default function Hero() {
         {/* bottom controls: dots (left) + arrows + play/pause (right) */}
         <div className="absolute bottom-5 left-0 right-0 z-20 flex items-center justify-between px-5 lg:hidden">
           {/* dot indicators */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             {slides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => manualNav(() => goTo(i))}
                 aria-label={`Go to slide ${i + 1}`}
-                className="transition-all duration-300"
-                style={{
-                  width: active === i ? '24px' : '8px',
-                  height: '8px',
-                  borderRadius: '4px',
-                  background: active === i ? slides[active].accent : 'rgba(255,255,255,0.35)',
-                }}
-              />
+                className="flex items-center justify-center"
+                style={{ minWidth: '24px', minHeight: '24px' }}
+              >
+                <span
+                  className="transition-all duration-300 block"
+                  style={{
+                    width: active === i ? '24px' : '8px',
+                    height: '8px',
+                    borderRadius: '4px',
+                    background: active === i ? slides[active].accent : 'rgba(255,255,255,0.35)',
+                  }}
+                />
+              </button>
             ))}
           </div>
 
@@ -387,20 +392,25 @@ export default function Hero() {
 
       {/* ── Desktop bottom bar: dots + play/pause ───────────── */}
       <div className="hidden lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-20 items-center gap-4">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           {slides.map((_, idx) => (
             <button
               key={idx}
               onClick={() => manualNav(() => goTo(idx))}
               aria-label={`Go to slide ${idx + 1}`}
-              className="transition-all duration-300"
-              style={{
-                width: active === idx ? '24px' : '8px',
-                height: '8px',
-                borderRadius: '4px',
-                background: active === idx ? slides[active].accent : 'rgba(255,255,255,0.30)',
-              }}
-            />
+              className="flex items-center justify-center"
+              style={{ minWidth: '24px', minHeight: '24px' }}
+            >
+              <span
+                className="transition-all duration-300 block"
+                style={{
+                  width: active === idx ? '24px' : '8px',
+                  height: '8px',
+                  borderRadius: '4px',
+                  background: active === idx ? slides[active].accent : 'rgba(255,255,255,0.30)',
+                }}
+              />
+            </button>
           ))}
         </div>
         <button

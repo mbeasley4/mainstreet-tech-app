@@ -43,7 +43,7 @@ export default function Footer() {
 
         {/* Services column */}
         <div>
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Services</p>
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Services</p>
           <ul className="space-y-2.5">
             {services.map(({ href, label }) => (
               <li key={label}>
@@ -57,7 +57,7 @@ export default function Footer() {
 
         {/* Company column */}
         <div>
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Company</p>
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Company</p>
           <ul className="space-y-2.5">
             {company.map(({ href, label }) => (
               <li key={label}>
@@ -71,7 +71,7 @@ export default function Footer() {
 
         {/* Contact column */}
         <div>
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Get In Touch</p>
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Get In Touch</p>
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <svg className="w-4 h-4 text-brand-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -110,7 +110,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
           <span>&copy; 2026 Main Street Tech. All rights reserved.</span>
           <div className="flex items-center gap-5">
             <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>

@@ -75,7 +75,7 @@ export default async function LatestBlog() {
                       <span className="text-slate-300">·</span>
                     </>
                   )}
-                  <span className="text-xs text-slate-400">{formatDate(post.publishedAt)}</span>
+                  <span className="text-xs text-slate-600">{formatDate(post.publishedAt)}</span>
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors leading-snug">
                   {post.title}

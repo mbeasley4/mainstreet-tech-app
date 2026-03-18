@@ -54,7 +54,7 @@ export default function Testimonials() {
                 </div>
                 <div>
                   <div className="font-semibold text-slate-900 text-sm">{name}</div>
-                  <div className="text-slate-400 text-xs">{role}</div>
+                  <div className="text-slate-600 text-xs">{role}</div>
                 </div>
               </div>
             </div>
