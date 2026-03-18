@@ -65,7 +65,7 @@ function ServiceCard({ icon, title, description, href }: { icon: React.ReactNode
       </div>
       <p className="text-slate-600 leading-relaxed text-sm flex-1">{description}</p>
       <a href={href} className="inline-flex items-center text-brand-600 font-semibold text-sm mt-5 hover:text-brand-700 transition-all">
-        Learn more
+        Learn more about {title}
       </a>
     </div>
   );

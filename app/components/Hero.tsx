@@ -263,7 +263,7 @@ export default function Hero() {
                     className="inline-flex items-center gap-2 font-semibold text-sm group/link"
                     style={{ color: slide.accent }}
                   >
-                    Learn More
+                    Learn more about {slide.name}
                     <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/link:translate-x-1" />
                   </a>
                 </div>
@@ -320,7 +320,7 @@ export default function Hero() {
                     className="inline-flex items-center gap-2 font-semibold text-sm"
                     style={{ color: slide.accent }}
                   >
-                    Learn More <ArrowRight className="w-4 h-4" />
+                    Learn more about {slide.name} <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>

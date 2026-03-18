@@ -149,7 +149,7 @@ export default function ServicesPage() {
                     ))}
                   </div>
                   <div className="inline-flex items-center gap-1.5 text-brand-600 font-semibold text-sm group-hover:gap-2.5 transition-all">
-                    Learn more <ArrowIcon className="w-4 h-4" />
+                    Learn more about {label} <ArrowIcon className="w-4 h-4" />
                   </div>
                 </a>
               ))}
