@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { PortableText } from '@portabletext/react';
+import { PortableText, PortableTextBlock } from '@portabletext/react';
 import ApplyForm from './ApplyForm';
 
 interface Job {
@@ -11,7 +11,7 @@ interface Job {
   location?: string;
   employmentType?: string;
   summary?: string;
-  description?: unknown[];
+  description?: PortableTextBlock[];
   requirements?: string[];
   postedAt?: string;
 }
